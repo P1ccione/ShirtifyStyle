@@ -115,50 +115,11 @@ nav {
     }
   }
 
-  /*titolo catalogo*/
-  #title {
-    display: flex;
-    justify-content: center;
-    font-size: 50px;
-  }
-
-  /*container generale*/
-  .container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    align-items: center;
-    height: 20vh;
-    column-gap: 20px;
-  }
-  
-  /*t-shirt*/
-  .t-shirt {
-    text-align: center;
-    padding: 5px;
+  #continuaP, #fineP {
     background-color: black;
     color: white;
-    border: 1px solid white;
   }
 
-  /*polo*/
-  .polo {
-    text-align: center;
-    padding: 5px;
-    background-color: black;
-    color: white;
-    border: 1px solid white;
+  #fineP {
+    width: 920px;
   }
-
-  /*canotta*/
-  .canotta {
-    text-align: center;
-    padding: 5px;
-    background-color: black;
-    color: white;
-    border: 1px solid white;
-  }
-
-
-  
-  
