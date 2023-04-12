@@ -1,0 +1,52 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+  }
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .title {
+    font-size: 3rem;
+    margin-left: 265px;
+}
+
+.container .subtitle {
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+.container .settings{
+    width: 40vw;
+    height: 40vw;
+}
+
+.container .t-shirt .t-shirt-img{
+    background-image: url(../img/T-Shirt-uomo-rossa.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 40vw;
+    height: 40vw;
+}
+
+#personal-img {
+    width: 150px;
+}
+
+hr {
+    border-top: 3px solid black; 
+    width: 100%; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
