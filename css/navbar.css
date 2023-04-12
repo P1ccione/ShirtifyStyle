@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif+Japanese");
+
 nav {
     background: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
@@ -24,12 +26,6 @@ nav {
   }
   nav .mainMenu li a:hover {
     background-color: rgb(56, 24, 199);
-  }
-  nav .mainMenu img:hover {
-    background-color: rgb(56, 24, 199);
-  }
-  nav .mainMenu img {
-    padding: 10px
   }
   nav .mainMenu img:hover {
     cursor: pointer;
@@ -74,8 +70,8 @@ nav {
     margin: 10px;
   }
   .nav-img {
-    width: 35px;
-    padding: 0;
+    width: 30px;
+    padding: 0 auto;
   }
   
   @media (max-width: 800px) {
