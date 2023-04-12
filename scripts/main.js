@@ -64,6 +64,6 @@ function changeImage() {
   divDonna.src = imgTshirtDonna[index];
 }
 
-document.addEventListener("load", () => {
+window.addEventListener('load', () => {
   setInterval(changeImage, 4000);
 })
