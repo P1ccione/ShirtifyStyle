@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    background-color: black;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+
+p {
+    margin-top: 2px;
+}
+
+
+.container {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+    background-color: white;
+    color: black;
+    padding: 100px;
+    
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 23px;
+}
+
+input {
+    border: none;
+    border-radius: 10px;
+}
+
+
+#messaggio {
+    height: 80px;
+}
+
+
+.bottoneInvio {
+    background-color: red;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    color: whitesmoke;
+}
+
+
+.social {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
