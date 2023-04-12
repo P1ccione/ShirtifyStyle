@@ -8,6 +8,19 @@
   list-style: none;
 }
 
+@media (max-width: 768px){
+  @media (orientation: landscape) {
+    /* Nascondi tutti i contenuti */
+    body {
+      display: none;
+    }
+    /* Mostra un messaggio di avviso */
+    #message {
+      display: block;
+    }
+  }
+}
+
 /* NAVBAR */
 
 nav {
@@ -91,6 +104,9 @@ nav .logo {
 }
 
 @media (max-width: 800px) {
+  nav .logo {
+    font-size: 1.3rem;
+  }
   nav .mainMenu {
     height: 100vh;
     margin-right: 0;
@@ -130,10 +146,7 @@ nav .logo {
 
 .header {
   font-family: "arial";
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: relative;
   text-align: center;
   background-image: url("../img/header-background-image.jpg");
   background-size: cover;
@@ -145,19 +158,28 @@ nav .logo {
 }
 
 .header .title {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 4rem;
   font-weight: bold;
   width: 80%;
 }
 .header .subtitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 2rem;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  width: 50%;
 }
 .header .btn {
   height: 50px;
   width: 200px;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
   border-radius: 20px;
   font-size: 1rem;
   font-weight: bold;
@@ -169,6 +191,9 @@ nav .logo {
 }
 
 @media (max-width: 800px) {
+  .header .btn {
+    top:70%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -176,9 +201,11 @@ nav .logo {
     font-size: 2.8rem;
     font-weight: bold;
     width: 100%;
+    top: 20%;
   }
   .header .subtitle {
     font-size: 1.5rem;
+    top:40%;
     margin-top: 50px;
     margin-bottom: 50px;
   }
