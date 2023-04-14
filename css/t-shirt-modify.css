@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .t-shirt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .title {
+  font-size: 3rem;
+}
+
+.container .subtitle {
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.container .settings {
+  width: 500px;
+  height: 500px;
+}
+
+.container .t-shirt .t-shirt-img {
+  background-image: url(../img/T-Shirt-uomo-bianca.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 500px;
+  height: 500px;
+}
+
+#personal-img {
+  width: 150px;
+}
+
+hr {
+  border-top: 3px solid black;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.fa-circle {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.fa-circle:hover {
+  opacity: 1;
+}
+
+.active {
+  opacity: 1;
+}
+
+.modify-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#quantity {
+    width: 70px;
+    border: solid black 1px;
+}
+
+#size {
+    width: 70px;
+    border: solid black 1px;
+}
