@@ -8,12 +8,19 @@
 
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .t-shirt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .container .title {
   font-size: 3rem;
-  margin-left: 265px;
 }
 
 .container .subtitle {
@@ -22,12 +29,12 @@
 }
 
 .container .settings {
-  width: 40vw;
-  height: 40vw;
+  width: 500px;
+  height: 500px;
 }
 
 .container .t-shirt .t-shirt-img {
-  background-image: url(../img/T-Shirt-uomo-rossa.png);
+  background-image: url(../img/T-Shirt-uomo-bianca.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -35,8 +42,8 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 40vw;
-  height: 40vw;
+  width: 500px;
+  height: 500px;
 }
 
 #personal-img {
