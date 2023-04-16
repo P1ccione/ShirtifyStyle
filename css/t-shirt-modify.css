@@ -28,13 +28,20 @@
   font-size: 1.5rem;
 }
 
-.container .settings {
+.container .settings-section {
   width: 500px;
   height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .settings {
+  width: 100%;
+  height: auto;
 }
 
 .container .t-shirt .t-shirt-img {
-  background-image: url(../img/T-Shirt-uomo-bianca.png);
+  background-image: url(../img/uomo/T-Shirt-uomo-bianca.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

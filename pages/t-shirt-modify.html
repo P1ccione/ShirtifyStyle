@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personalizzazione</title>
     <link rel="stylesheet" href="../css/t-shirt-modify.css" />
     <link rel="stylesheet" href="../css/navbar.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <nav>
@@ -22,7 +28,11 @@
         <li><a href="./">HOME</a></li>
         <li><a href="#">CATALOGO</a></li>
         <li><a href="./contacts.html">CONTATTI</a></li>
-        <li><a href="./cart.html"><img src="../svg/cart.svg" alt="" class="nav-img" /></a></li>
+        <li>
+          <a href="./cart.html"
+            ><img src="../svg/cart.svg" alt="" class="nav-img"
+          /></a>
+        </li>
         <div class="closeMenu">
           <img src="../svg/x.svg" alt="" class="nav-img" />
         </div>
@@ -35,53 +45,97 @@
     </nav>
 
     <div class="main">
-        <div class="container">
-            <div class="t-shirt">
-                <span class="title">T-Shirt</span>
-                <div class="t-shirt-img">
-                    <img src="../img/default-placeholder-image.png" alt="" id="personal-img">
-                </div>
-            </div>
-            <div class="settings">
-                <span class="subtitle">Descrizione</span>
-                <hr>
-                <div class="price">
-                    <span class="price-title">Prezzo</span>
-                    <span class="price-value">€</span>
-                </div>
-                <div class="materials">
-                    <span class="materials-title">Materiali</span>
-                    <span class="materials-value">100% cotone</span>
-                </div>
-                <div class="colors">
-                  <span class="materials-title">Colore</span>
-                  <i class="fa-regular fa-circle active" style="color: #000000;" id="bianca"></i>
-                  <i class="fa-solid fa-circle" style="color: #000000;" id="nera"></i>
-                  <i class="fa-solid fa-circle" style="color: #f00606;" id="rossa"></i>
-                  <i class="fa-solid fa-circle" style="color: #2f07e1;" id="blu"></i>
-                  <i class="fa-solid fa-circle" style="color: #19c311;" id="verde"></i>
-                  <i class="fa-solid fa-circle" style="color: #df6489;" id="rosa"></i>
-                  <i class="fa-solid fa-circle" style="color: #820964;" id="viola"></i>
-                </div>
-                <form action="" class="modify-form">
-                    <label for="size">Taglia</label>
-                    <select name="size-input" id="size" required>
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
-                    </select>
-                    <label for="quantity">Quantità</label>
-                    <input type="number" name="number-input" id="quantity" min="1" max="10" value="1" required>
-                   <label for="file">Inserisci immagine</label>
-                   <input type="file" name="file-input" id="file" accept="image/jpeg, image/png" required>
-                   <hr>
-                   <input type="submit" value="AGGIUNGI AL CARRELLO">
-                </form>
-            </div>
+      <div class="container">
+        <div class="t-shirt">
+          <span class="title">T-Shirt</span>
+          <div class="t-shirt-img">
+            <img
+              src="../img/default-placeholder-image.png"
+              alt=""
+              id="personal-img"
+            />
+          </div>
         </div>
+        <div class="settings-section">
+          <div class="settings">
+            <span class="subtitle">Descrizione</span>
+            <hr />
+            <div class="price">
+              <span class="price-title">Prezzo</span>
+              <span class="price-value">€</span>
+            </div>
+            <div class="materials">
+              <span class="materials-title">Materiali</span>
+              <span class="materials-value">100% cotone</span>
+            </div>
+            <div class="colors">
+              <span class="materials-title">Colore</span>
+              <i
+                class="fa-regular fa-circle active"
+                style="color: #000000"
+                id="bianca"
+              ></i>
+              <i
+                class="fa-solid fa-circle"
+                style="color: #000000"
+                id="nera"
+              ></i>
+              <i
+                class="fa-solid fa-circle"
+                style="color: #f00606"
+                id="rossa"
+              ></i>
+              <i class="fa-solid fa-circle" style="color: #2f07e1" id="blu"></i>
+              <i
+                class="fa-solid fa-circle"
+                style="color: #19c311"
+                id="verde"
+              ></i>
+              <i
+                class="fa-solid fa-circle"
+                style="color: #df6489"
+                id="rosa"
+              ></i>
+              <i
+                class="fa-solid fa-circle"
+                style="color: #820964"
+                id="viola"
+              ></i>
+            </div>
+            <form action="" class="modify-form">
+              <label for="size">Taglia</label>
+              <select name="size-input" id="size" required>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+              </select>
+              <label for="quantity">Quantità</label>
+              <input
+                type="number"
+                name="number-input"
+                id="quantity"
+                min="1"
+                max="10"
+                value="1"
+                required
+              />
+              <label for="file">Inserisci immagine</label>
+              <input
+                type="file"
+                name="file-input"
+                id="file"
+                accept="image/jpeg, image/png"
+                required
+              />
+              <hr />
+              <input type="submit" value="AGGIUNGI AL CARRELLO" />
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="../scripts/t-shirt-modify.js"></script>
     <script src="../scripts/main.js"></script>
-</body>
+  </body>
 </html>

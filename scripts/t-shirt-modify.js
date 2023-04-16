@@ -10,6 +10,6 @@ function setColor(color) {
   colors.forEach((color) => {
     color.classList.remove("active");
   });
-  tShirt.style.backgroundImage = `url(../img/T-Shirt-uomo-${color.id}.png)`;
+  tShirt.style.backgroundImage = `url(../img/uomo/T-Shirt-uomo-${color.id}.png)`;
   color.classList.add("active");
 }
