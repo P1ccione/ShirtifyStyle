@@ -60,74 +60,89 @@
           <div class="settings">
             <span class="subtitle">Descrizione</span>
             <hr />
-            <div class="price">
-              <span class="price-title">Prezzo</span>
-              <span class="price-value">€</span>
+            <div class="section">
+              <span class="section-title">Prezzo</span>
+              <span class="value" id="price-span">10 €</span>
             </div>
-            <div class="materials">
-              <span class="materials-title">Materiali</span>
-              <span class="materials-value">100% cotone</span>
+            <div class="section">
+              <span class="section-title">Materiali</span>
+              <span class="value">100% cotone</span>
             </div>
-            <div class="colors">
-              <span class="materials-title">Colore</span>
-              <i
-                class="fa-regular fa-circle active"
-                style="color: #000000"
-                id="bianca"
-              ></i>
-              <i
-                class="fa-solid fa-circle"
-                style="color: #000000"
-                id="nera"
-              ></i>
-              <i
-                class="fa-solid fa-circle"
-                style="color: #f00606"
-                id="rossa"
-              ></i>
-              <i class="fa-solid fa-circle" style="color: #2f07e1" id="blu"></i>
-              <i
-                class="fa-solid fa-circle"
-                style="color: #19c311"
-                id="verde"
-              ></i>
-              <i
-                class="fa-solid fa-circle"
-                style="color: #df6489"
-                id="rosa"
-              ></i>
-              <i
-                class="fa-solid fa-circle"
-                style="color: #820964"
-                id="viola"
-              ></i>
+            <div class="section">
+              <span class="section-title">Colore</span>
+              <div class="colors">
+                <i
+                  class="fa-regular fa-circle active"
+                  style="color: #000000"
+                  id="bianca"
+                ></i>
+                <i
+                  class="fa-solid fa-circle"
+                  style="color: #000000"
+                  id="nera"
+                ></i>
+                <i
+                  class="fa-solid fa-circle"
+                  style="color: #f00606"
+                  id="rossa"
+                ></i>
+                <i
+                  class="fa-solid fa-circle"
+                  style="color: #2f07e1"
+                  id="blu"
+                ></i>
+                <i
+                  class="fa-solid fa-circle"
+                  style="color: #19c311"
+                  id="verde"
+                ></i>
+                <i
+                  class="fa-solid fa-circle"
+                  style="color: #df6489"
+                  id="rosa"
+                ></i>
+                <i
+                  class="fa-solid fa-circle"
+                  style="color: #820964"
+                  id="viola"
+                ></i>
+              </div>
             </div>
             <form action="" class="modify-form">
-              <label for="size">Taglia</label>
-              <select name="size-input" id="size" required>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-              </select>
-              <label for="quantity">Quantità</label>
-              <input
-                type="number"
-                name="number-input"
-                id="quantity"
-                min="1"
-                max="10"
-                value="1"
-                required
-              />
-              <label for="file">Inserisci immagine</label>
-              <input
-                type="file"
-                name="file-input"
-                id="file"
-                accept="image/jpeg, image/png"
-                required
-              />
+              <div class="section">
+                <label for="size" class="section-title">Taglia</label>
+                <select name="size-input" id="size" required>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                </select>
+              </div>
+              <div class="section">
+                <label for="quantity" class="section-title">Quantità</label>
+                <input
+                  type="number"
+                  name="number-input"
+                  id="quantity"
+                  min="1"
+                  max="10"
+                  value="1"
+                  required
+                />
+              </div>
+              <p>*quantità massima 10</p>
+              <div class="section">
+                <label for="file" class="section-title">Inserisci immagine</label>
+                <input
+                  class="custom-file-input"
+                  type="file"
+                  name="file-input"
+                  id="file"
+                  accept="image/jpeg, image/png"
+                  required
+                />
+              </div>
+              <p>*è consigliato inserire un'immagine quadrata</p>
               <hr />
               <input type="submit" value="AGGIUNGI AL CARRELLO" />
             </form>
