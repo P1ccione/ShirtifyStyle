@@ -10,6 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: auto;
 }
 
 .container .t-shirt {
@@ -177,7 +178,7 @@ input[type="submit"] {
 
   .container .settings-section {
     width: 90%;
-    margin: 0px;
+    margin: 0;
   }
 
   .container .t-shirt {
@@ -193,6 +194,7 @@ input[type="submit"] {
 }
 
 @media (max-width: 500px) {
+
   .container .t-shirt {
     margin: 0;
     width: 300px;
