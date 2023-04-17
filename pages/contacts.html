@@ -48,16 +48,17 @@
 
       <div class="formContainer">
         <form>
-          <label for="name">Nome</label>
-          <input type="text" name="Name" />
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" />
-          <label for="messaggio">Messaggio</label>
+          <label for="name">Nome <span class="req">*</span></label>
+          <input type="text" name="Name" required />
+          <label for="email">Email <span class="req">*</span></label>
+          <input type="email" name="email" id="email" required />
+          <label for="messaggio">Messaggio <span class="req">*</span></label>
           <textarea
             name="messaggio"
             id="messaggio"
             cols="30"
             rows="10"
+            required
           ></textarea>
           <input type="submit" value="Invia" class="bottoneInvio" />
         </form>
@@ -82,5 +83,5 @@
     </div>
     <!--footer-->
   </body>
-  <script src="/lib/main.js"></script>
+  <script src="/scripts/main.js"></script>
 </html>

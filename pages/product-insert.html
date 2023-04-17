@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/product-insert.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="../svg/logo.svg" alt="" />
+          <h1>T-Shirt STORE</h1>
+        </div>
+        <div class="openMenu">
+          <img src="../svg/burger.svg" alt="" class="nav-img" />
+        </div>
+        <ul class="mainMenu">
+          <li><a href="./">HOME</a></li>
+          <li><a href="./catalogo.html">CATALOGO</a></li>
+          <li><a href="./contacts.html">CONTATTI</a></li>
+          <li>
+            <a href="./cart.html"
+              ><img src="../svg/cart.svg" alt="" class="nav-img"
+            /></a>
+          </li>
+          <div class="closeMenu">
+            <img src="../svg/x.svg" alt="" class="nav-img" />
+          </div>
+          <span class="icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+          </span>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="main">
+            <h1>Inserimento del prodotto</h1>
+      <div class="container">
+    
+        <div class="form">
+          <form action="" method="post">
+            <div class="section">
+              <label class="label" for="nome prodotto">Inserire nome del prodotto</label>
+              <input
+                type="text"
+                name="nome prodotto"
+                placeholder="nome del prodotto"
+              />
+            </div>
+
+            <div class="section">
+              <label class="label" for="descrizione prodotto"
+                >Inserire descrizione del prodotto</label
+              >
+              <input
+                type="text"
+                name="descrizione prodotto"
+                placeholder="descrizione del prodotto"
+              />
+            </div>
+            <div class="section">
+              <label class="label" for="prezzo prodotto">Inserire prezzo</label>
+              <input
+                type="text"
+                name="prezzo prodotto"
+                placeholder="prezzo del prodotto"
+              />
+            </div>
+            <div class="section">
+              <label class="label" for="quantità prodotto">Inserire quantità</label>
+              <input
+                type="text"
+                name="quantità prodotto"
+                placeholder="quantità del prodotto"
+              />
+            </div>
+            <div class="drag-area">
+                <h3>Allega l'immagine del prodotto</h3>
+                <input
+                  class="custom-file-input"
+                  type="file"
+                  name="file-input"
+                  id="file"
+                  accept="image/jpeg, image/png"
+                  required
+                />
+                <img src="../img/default-placeholder-image.png" alt="" srcset="" id="immagine-prodotto">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="../scripts/main.js"></script>
+  </body>
+</html>
