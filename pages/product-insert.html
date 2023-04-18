@@ -59,24 +59,20 @@
           <form action="" method="post">
             <div class="section">
               <label class="label" for="modello">Seleziona modello</label>
-              <select name="color-input" id="color" required>
+              <select name="model-input" id="model" required>
+                <option value="uomo">Uomo</option>
+                <option value="donna">Donna</option>
+                <option value="bambino">Bambino</option>
+              </select>
+            </div>
+            <div class="section">
+              <label class="label" for="categoria">Seleziona categoria</label>
+              <select name="category-input" id="category" required>
                 <option value="t-shirt">T-Shirt</option>
                 <option value="polo">Polo</option>
                 <option value="canotta">Canotta</option>
               </select>
             </div>
-            <div class="section">
-              <label class="label" for="nome prodotto"
-                >Inserire nome del prodotto</label
-              >
-              <input
-                type="text"
-                name="nome prodotto"
-                placeholder="nome del prodotto"
-                required
-              />
-            </div>
-
             <div class="section">
               <label class="label" for="descrizione prodotto"
                 >Inserire descrizione del prodotto</label
