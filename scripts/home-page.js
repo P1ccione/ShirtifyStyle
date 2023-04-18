@@ -45,3 +45,16 @@ function changeImage() {
 window.addEventListener('load', () => {
   setInterval(changeImage, 4000);
 })
+
+
+const sections = document.querySelectorAll('.main-section');
+
+sections.forEach(section => {
+  section.addEventListener ('click', ()=> {
+    localStorage.setItem('modello', section.id);
+
+    window.location.href='./catalogo.html';
+  } )
+
+  
+})
