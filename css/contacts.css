@@ -90,6 +90,19 @@ input {
   opacity: 0.5;
 }
 
+/*ringraziamento */
+
+.ringraziamento {
+  background-color: white;
+  color: black;
+  font-size: large;
+  text-align: center;
+  border: solid #139503;
+  border-radius: 0.5em;
+  padding: 1%;
+  margin: 0.5em;
+  display: hidden;
+}
 
 /*socials*/
 
@@ -158,6 +171,12 @@ input {
   .socialImages {
     min-width: 10%;
     width: .5%;
+  }
+
+  .ringraziamento {
+    margin-bottom: 24em;
+    width: 90%;
+    padding: 1%;
   }
   
  
