@@ -13,6 +13,13 @@
       integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o="
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <header>
@@ -46,20 +53,26 @@
     </header>
 
     <div class="main">
-            <h1>Inserimento del prodotto</h1>
+      <h1>Inserimento del prodotto</h1>
       <div class="container">
-    
         <div class="form">
           <form action="" method="post">
             <div class="section">
-              <label class="label" for="nome prodotto">Inserire nome del prodotto</label>
-              <input
-                type="text"
-                name="nome prodotto"
-                placeholder="nome del prodotto"
-              />
+              <label class="label" for="modello">Seleziona modello</label>
+              <select name="model-input" id="model" required>
+                <option value="uomo">Uomo</option>
+                <option value="donna">Donna</option>
+                <option value="bambino">Bambino</option>
+              </select>
             </div>
-
+            <div class="section">
+              <label class="label" for="categoria">Seleziona categoria</label>
+              <select name="category-input" id="category" required>
+                <option value="t-shirt">T-Shirt</option>
+                <option value="polo">Polo</option>
+                <option value="canotta">Canotta</option>
+              </select>
+            </div>
             <div class="section">
               <label class="label" for="descrizione prodotto"
                 >Inserire descrizione del prodotto</label
@@ -68,36 +81,69 @@
                 type="text"
                 name="descrizione prodotto"
                 placeholder="descrizione del prodotto"
+                required
               />
             </div>
             <div class="section">
               <label class="label" for="prezzo prodotto">Inserire prezzo</label>
               <input
-                type="text"
+                type="number"
                 name="prezzo prodotto"
                 placeholder="prezzo del prodotto"
+                min="0"
+                required
               />
             </div>
             <div class="section">
-              <label class="label" for="quantità prodotto">Inserire quantità</label>
+              <label class="label" for="quantità prodotto"
+                >Inserire quantità</label
+              >
               <input
-                type="text"
+                type="number"
                 name="quantità prodotto"
                 placeholder="quantità del prodotto"
+                min="0"
+                required
               />
             </div>
-            <div class="drag-area">
-                <h3>Allega l'immagine del prodotto</h3>
-                <input
-                  class="custom-file-input"
-                  type="file"
-                  name="file-input"
-                  id="file"
-                  accept="image/jpeg, image/png"
-                  required
-                />
-                <img src="../img/default-placeholder-image.png" alt="" srcset="" id="immagine-prodotto">
+            <div class="section">
+              <label class="label" for="taglia">Seleziona taglia</label>
+              <select name="size-input" id="size" required>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+              </select>
             </div>
+            <div class="section">
+              <label class="label" for="colore">Seleziona colore</label>
+              <select name="color-input" id="color" required>
+                <option value="rossa">Rossa</option>
+                <option value="verde">Verde</option>
+                <option value="nera">Nera</option>
+                <option value="bianca">Bianca</option>
+                <option value="blu">Blu</option>
+                <option value="rosa">Rosa</option>
+              </select>
+            </div>
+            <div class="drag-area">
+              <h3>Allega l'immagine del prodotto</h3>
+              <input
+                class="custom-file-input"
+                type="file"
+                name="file-input"
+                id="file"
+                accept="image/jpeg, image/png"
+                required
+              />
+              <img
+                src="../img/default-placeholder-image.png"
+                alt=""
+                srcset=""
+                id="immagine-prodotto"
+              />
+            </div>
+            <input type="submit" value="INVIA">
           </form>
         </div>
       </div>
