@@ -7,19 +7,6 @@
   list-style: none;
 }
 
-@media (max-width: 768px){
-  @media (orientation: landscape) {
-    /* Nascondi tutti i contenuti */
-    body {
-      display: none;
-    }
-    /* Mostra un messaggio di avviso */
-    #message {
-      display: block;
-    }
-  }
-}
-
 /* HEADER */
 
 .header {
