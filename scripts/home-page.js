@@ -4,33 +4,33 @@ const divUomo = document.querySelector("#uomo > img");
 const divBambino = document.querySelector("#bambino > img");
 
 const imgTshirtDonna = [
-  "../img/donna/T-Shirt/T-Shirt-donna-bianca.png",
-  "../img/donna/T-Shirt/T-Shirt-donna-nera.png",
-  "../img/donna/T-Shirt/T-Shirt-donna-blu.png",
-  "../img/donna/T-Shirt/T-Shirt-donna-verde.png",
-  "../img/donna/T-Shirt/T-Shirt-donna-viola.png",
-  "../img/donna/T-Shirt/T-Shirt-donna-rosa.png",
-  "../img/donna/T-Shirt/T-Shirt-donna-rossa.png",
+  "../img/donna/T-Shirt/immagine-t-shirt-donna-bianca.png",
+  "../img/donna/T-Shirt/immagine-t-shirt-donna-nera.png",
+  "../img/donna/T-Shirt/immagine-t-shirt-donna-blu.png",
+  "../img/donna/T-Shirt/immagine-t-shirt-donna-verde.png",
+  "../img/donna/T-Shirt/immagine-t-shirt-donna-viola.png",
+  "../img/donna/T-Shirt/immagine-t-shirt-donna-rosa.png",
+  "../img/donna/T-Shirt/immagine-t-shirt-donna-rossa.png",
 ];
 
 const imgTshirtUomo = [
-  "../img/uomo/T-Shirt/T-Shirt-uomo-bianca.png",
-  "../img/uomo/T-Shirt/T-Shirt-uomo-nera.png",
-  "../img/uomo/T-Shirt/T-Shirt-uomo-blu.png",
-  "../img/uomo/T-Shirt/T-Shirt-uomo-verde.png",
-  "../img/uomo/T-Shirt/T-Shirt-uomo-viola.png",
-  "../img/uomo/T-Shirt/T-Shirt-uomo-rosa.png",
-  "../img/uomo/T-Shirt/T-Shirt-uomo-rossa.png",
+  "../img/uomo/T-Shirt/immagine-t-shirt-uomo-bianca.png",
+  "../img/uomo/T-Shirt/immagine-t-shirt-uomo-nera.png",
+  "../img/uomo/T-Shirt/immagine-t-shirt-uomo-blu.png",
+  "../img/uomo/T-Shirt/immagine-t-shirt-uomo-verde.png",
+  "../img/uomo/T-Shirt/immagine-t-shirt-uomo-viola.png",
+  "../img/uomo/T-Shirt/immagine-t-shirt-uomo-rosa.png",
+  "../img/uomo/T-Shirt/immagine-t-shirt-uomo-rossa.png",
 ];
 
 const imgTshirtBambino = [
-  "../img/bambino/T-Shirt/T-Shirt-bambino-bianca.png",
-  "../img/bambino/T-Shirt/T-Shirt-bambino-nera.png",
-  "../img/bambino/T-Shirt/T-Shirt-bambino-blu.png",
-  "../img/bambino/T-Shirt/T-Shirt-bambino-verde.png",
-  "../img/bambino/T-Shirt/T-Shirt-bambino-viola.png",
-  "../img/bambino/T-Shirt/T-Shirt-bambino-rosa.png",
-  "../img/bambino/T-Shirt/T-Shirt-bambino-rossa.png",
+  "../img/bambino/T-Shirt/immagine-t-shirt-bambino-bianca.png",
+  "../img/bambino/T-Shirt/immagine-t-shirt-bambino-nera.png",
+  "../img/bambino/T-Shirt/immagine-t-shirt-bambino-blu.png",
+  "../img/bambino/T-Shirt/immagine-t-shirt-bambino-verde.png",
+  "../img/bambino/T-Shirt/immagine-t-shirt-bambino-viola.png",
+  "../img/bambino/T-Shirt/immagine-t-shirt-bambino-rosa.png",
+  "../img/bambino/T-Shirt/immagine-t-shirt-bambino-rossa.png",
 ];
 
 let index = 0;
