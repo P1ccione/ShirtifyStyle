@@ -6,95 +6,211 @@
   list-style: none;
 }
 
-/*titolo catalogo*/
-#title {
-  display: flex;
-  justify-content: center;
-  font-size: 50px;
-}
+/*contatti */
 
-/*container generale*/
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.categories {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-}
-
-/*t-shirt*/
-.category {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
+body {
   background-color: black;
-  color: white;
-  border: 1px solid white;
-  width: 30vw;
-  height: 30vw;
-  cursor: pointer;
+  color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
 }
 
-.category img {
-  width: 20vw;
-  height: 20vw;
+.mainContainer {
+    position: relative;
+    width: 100vw;
+    height: 85vh;
 }
 
-@media screen and (max-width: 750px) {
-  .categories {
-
+.titleContainer {
+    position: absolute;
+    display: flex;
     flex-direction: column;
-  }
+    gap: 0.5rem;
+    text-align: center;
+    width: 50%;
+    top: 20%;
+}
+
+h2 {
+    width: 100%;
+}
+
+p {
+    width: 100%;
+}
+
+.socialContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    top: 60%;
+    width: 50%;
+}
+
+.imgContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.socialImages {
+  background-color: white;
+  min-height: 10%;
+  max-width: 10%;
+  border-radius: 1em;
+}
+
+
+.formContainer {
+    position: absolute;
+    background-color: whitesmoke;
+    padding: 1.5rem;
+    color: black;
+    width: 40%;
+    border-radius: 0.5em;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.thanksContainer{
+  background-color: white;
+  color: black;
+  font-size: large;
+  text-align: center;
+  border: solid #139503;
+  border-radius: 0.5em;
   
-  .category {
-    width: 50vw;
-    height: 50vw;
-    margin-bottom: 40px;
+}
 
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 0.6em;
+}
+
+input {
+  border: none;
+  border-radius: .5em;
+  background-color: #daddda;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  font-size: 1rem;
+}
+
+.req {
+  color: red;
+}
+
+#messaggio {
+  background-color: #daddda;
+  border: none;
+  border-radius: .5em;
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.bottoneInvio {
+  background-color: red;
+  height: 1.875em;
+  border: none;
+  border-radius: 5px;
+  color: whitesmoke;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  margin-top: .5em;
+}
+
+.bottoneInvio:hover {
+  opacity: 0.8;
+}
+
+.bottoneInvio:active {
+  opacity: 0.5;
+}
+
+
+
+
+
+@media (max-width: 1000px) {
+
+    .mainContainer {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+    }
+
+  body {
+    font-size: 18px;
   }
 
-  .category img {
-    width: 30vw;
-    height: 30vw;
+  .titleContainer
+   {
+    width: 500px;
+    top:5%;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+
+  .socialContainer{
+    
+    width: 500px;
+   top: 83%;
+   left: 50%;
+   transform: translateX(-50%);
   }
 
-
-}
-
-
-@media screen and (max-width: 450px) {
-
-  .category {
-    width: 70vw;
-    height: 70vw;
-    margin-bottom: 60px;
-
+  .formContainer {
+    width: 500px;
+    top: 17%;
+    transform: translateX(-50%);
+ 
   }
 
-  .category img {
-    width: 50vw;
-    height: 50vw;
+  
 }
 
 
+@media (max-width: 580px) {
+
+    .titleContainer
+    {
+     width: 400px;
+     }
+ 
+   .socialContainer{
+     width: 300px;
+   }
+ 
+   .formContainer {
+    top: 20%;
+     width: 300px;
+  
+   }
+ 
 }
 
 
-@media screen and (max-width: 350px) {
-
-  .category img {
-    width: 40vw;
-    height: 40vw;
+@media (max-width: 400px) {
+   
+    .titleContainer
+    {
+     width: 300px;
+     }
+ 
+   .socialContainer{
+     width: 300px;
+   }
+ 
+   .formContainer {
+     width: 250px;
+  
+   }
 }
-
-
-}
-
