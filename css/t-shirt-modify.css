@@ -169,8 +169,12 @@ input[type="submit"] {
   color: #ffffff;
   font-size: 1.5rem;
   border-radius: 5px;
+  cursor: pointer;
 }
 
+input[type="submit"]:hover {
+  background-color: rgb(56, 24, 199);
+}
 @media (max-width: 1200px) {
   .container {
     flex-direction: column;
