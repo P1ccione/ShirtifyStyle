@@ -17,6 +17,7 @@ body {
 
 .mainContainer {
   position: relative;
+  width: 100vw;
   height: 85vh;
 }
 
@@ -134,37 +135,33 @@ input {
 @media (max-width: 1000px) {
   .mainContainer {
     position: relative;
-    height: 120vh;
+    width: 100vw;
+    height: 100vh;
   }
 
-  .thanksContainer {
-    top: 76%;
-    width: 100%;
+  body {
+    font-size: 18px;
   }
-}
 
-body {
-  font-size: 18px;
-}
+  .titleContainer {
+    width: 500px;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
-.titleContainer {
-  width: 500px;
-  top: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-}
+  .socialContainer {
+    width: 500px;
+    top: 83%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
-.socialContainer {
-  width: 500px;
-  top: 83%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.formContainer {
-  width: 500px;
-  top: 17%;
-  transform: translateX(-50%);
+  .formContainer {
+    width: 500px;
+    top: 17%;
+    transform: translateX(-50%);
+  }
 }
 
 @media (max-width: 580px) {
@@ -179,6 +176,10 @@ body {
   .formContainer {
     top: 20%;
     width: 300px;
+  }
+  .thanksContainer {
+    top: 76%;
+    width: 100%;
   }
 }
 
