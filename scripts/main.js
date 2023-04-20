@@ -20,3 +20,9 @@ function show() {
 function close() {
   mainMenu.style.top = "-100%";
 }
+
+const logo = document.querySelector("nav .logo");
+
+logo.addEventListener("click", () => {
+  window.location.href = "./"
+})
