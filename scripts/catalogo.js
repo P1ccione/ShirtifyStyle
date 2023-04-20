@@ -11,9 +11,14 @@ const longSleevedTShirtCategory = document.querySelector(
   "#long-sleeved-t-shirt"
 );
 const canottaCategory = document.querySelector("#canotta");
-tShirtCategory.src = `../img/${modello}/T-shirt/immagine-t-shirt-${modello}-bianca.png`;
-longSleevedTShirtCategory.src = `../img/${modello}/long-sleeved-t-shirt/immagine-long-sleeved-t-shirt-${modello}-bianca.png`;
-canottaCategory.src = `../img/${modello}/Canotta/immagine-canotta-${modello}-bianca.png`;
+
+  tShirtCategory.src = `../img/${modello}/T-shirt/immagine-t-shirt-${modello}-bianca.png`;
+  longSleevedTShirtCategory.src = `../img/${modello}/long-sleeved-t-shirt/immagine-long-sleeved-t-shirt-${modello}-bianca.png`;
+  canottaCategory.src = `../img/${modello}/Canotta/immagine-canotta-${modello}-bianca.png`;
+  tShirtCategory.style.opacity = "1";
+  longSleevedTShirtCategory.style.opacity = "1";
+  canottaCategory.style.opacity = "1";
+
 // La variabile esiste già nel localStorage, puoi utilizzarne il suo valore   donna uomo o bambino
 const categories = document.querySelectorAll(".category");
 categories.forEach((category) => {

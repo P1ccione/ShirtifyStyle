@@ -46,6 +46,7 @@
 }
 
 .container .t-shirt .t-shirt-img {
+  background-image: url("../img/default-placeholder-image-removebg-preview.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

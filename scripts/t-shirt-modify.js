@@ -20,7 +20,8 @@ const immagineCategoria = document.querySelector(
 );
 
 immagineCategoria.style.backgroundImage = `url(../img/${modello}/${categoria}/immagine-${categoria}-${modello}-bianca.png)`;
-
+document.querySelector("#personal-img").src =
+  "../img/default-placeholder-image-removebg-preview.png";
 const colors = document.querySelectorAll(".fa-circle");
 const tShirt = document.querySelector(".container .t-shirt .t-shirt-img");
 
