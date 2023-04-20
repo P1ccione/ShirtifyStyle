@@ -1,28 +1,25 @@
-
-const modello = localStorage.getItem('modello');
-const categoria = localStorage.getItem('categoria');
-
+let modello = localStorage.getItem("modello");
+let categoria = localStorage.getItem("categoria");
 
 if (modello === null) {
-    localStorage.setItem('modello', 'uomo');
-    
+  localStorage.setItem("modello", "uomo");
+  modello = localStorage.getItem("modello");
+
   if (categoria === null) {
-    localStorage.setItem('categoria', 't-shirt');
+    localStorage.setItem("categoria", "t-shirt");
+    categoria = localStorage.getItem("categoria");
   }
-  // La variabile non esiste ancora nel localStorage e viene settata a uomo
-} else {
-      
-  if (categoria === null) {
-    localStorage.setItem('categoria', 't-shirt');
-  }
-
-  const immagineCategoria = document.querySelector(".container .t-shirt .t-shirt-img");
-
-  immagineCategoria.style.backgroundImage = `url(../img/${modello}/${categoria}/immagine-${categoria}-${modello}-bianca.png)`
-
 }
 
+if (categoria === null) {
+  localStorage.setItem("categoria", "t-shirt");
+}
 
+const immagineCategoria = document.querySelector(
+  ".container .t-shirt .t-shirt-img"
+);
+
+immagineCategoria.style.backgroundImage = `url(../img/${modello}/${categoria}/immagine-${categoria}-${modello}-bianca.png)`;
 
 const colors = document.querySelectorAll(".fa-circle");
 const tShirt = document.querySelector(".container .t-shirt .t-shirt-img");
