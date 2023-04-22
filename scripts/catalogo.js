@@ -6,6 +6,7 @@ if (modello === null) {
   // La variabile non esiste ancora nel localStorage e viene settata a uomo
 }
 
+<<<<<<< Updated upstream
 const tShirtCategory = document.querySelector("#t-shirt");
 const longSleevedTShirtCategory = document.querySelector(
   "#long-sleeved-t-shirt"
@@ -28,3 +29,6 @@ categories.forEach((category) => {
     window.location.href = "./t-shirt-modify.html";
   });
 });
+=======
+
+>>>>>>> Stashed changes
