@@ -6,16 +6,15 @@ if (modello === null) {
   // La variabile non esiste ancora nel localStorage e viene settata a uomo
 }
 
-<<<<<<< Updated upstream
 const tShirtCategory = document.querySelector("#t-shirt");
 const longSleevedTShirtCategory = document.querySelector(
   "#long-sleeved-t-shirt"
 );
 const canottaCategory = document.querySelector("#canotta");
 
-  tShirtCategory.src = `../img/${modello}/t-shirt/immagine-t-shirt-${modello}-bianca.png`;
-  longSleevedTShirtCategory.src = `../img/${modello}/long-sleeved-t-shirt/immagine-long-sleeved-t-shirt-${modello}-bianca.png`;
-  canottaCategory.src = `../img/${modello}/canotta/immagine-canotta-${modello}-bianca.png`;
+  tShirtCategory.src = `../img/${modello}/t-shirt/immagine-t-shirt-${modello}-bianco.png`;
+  longSleevedTShirtCategory.src = `../img/${modello}/long-sleeved-t-shirt/immagine-long-sleeved-t-shirt-${modello}-bianco.png`;
+  canottaCategory.src = `../img/${modello}/canotta/immagine-canotta-${modello}-bianco.png`;
   tShirtCategory.style.opacity = "1";
   longSleevedTShirtCategory.style.opacity = "1";
   canottaCategory.style.opacity = "1";
@@ -29,6 +28,3 @@ categories.forEach((category) => {
     window.location.href = "./t-shirt-modify.html";
   });
 });
-=======
-
->>>>>>> Stashed changes
