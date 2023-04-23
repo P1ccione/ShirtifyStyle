@@ -24,28 +24,39 @@
   margin-top: 20px
 }
 
-.filter {
+.filters {
   width: 30vw;
   height: auto;
   display: flex;
   flex-direction: column;
-  border: solid black 1px;
+  padding: 10px;
 }
 
 .filter-title {
   margin-top: 20px;
-  height: 1.5rem;
-}
-
-select {
   height: 3rem;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter {
+  font-size: 1.5rem;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: solid black 1px;
-  border-radius: 5px;
-  appearance: none;
-  text-align: center;
+  cursor: pointer;
 }
 
 
+.filter:hover {
+  background-color: rgb(56, 24, 199);
+  color: rgb(255, 255, 255);
+}
 
 
 .products {
@@ -53,7 +64,6 @@ select {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   row-gap: 15px;
-  border: solid black 1px;
 }
 
 .product {

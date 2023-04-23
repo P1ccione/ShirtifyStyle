@@ -66,7 +66,7 @@ const productsArray = [
     modello: "donna",
   },
   {
-    idProdottoCatalogo: 4,
+    idProdottoCatalogo: 7,
     colore: "rosso",
     taglia: "M",
     prezzo: "€10.00",
@@ -77,7 +77,7 @@ const productsArray = [
     modello: "bambino",
   },
   {
-    idProdottoCatalogo: 5,
+    idProdottoCatalogo: 8,
     colore: "verde",
     taglia: "M",
     prezzo: "€10.00",
@@ -88,7 +88,7 @@ const productsArray = [
     modello: "bambino",
   },
   {
-    idProdottoCatalogo: 6,
+    idProdottoCatalogo: 9,
     colore: "blu",
     taglia: "M",
     prezzo: "€10.00",
@@ -100,39 +100,95 @@ const productsArray = [
   },
 ];
 
-const filters = document.querySelectorAll(".select");
+const productsContainer = document.querySelector(".products");
+
+productsArray.forEach((product) => {
+  const productElement = document.createElement("div");
+  productElement.classList.add("product");
+  productElement.id = product.idProdottoCatalogo;
+  productElement.innerHTML = `
+    <span class="product-name">${product.categoria}</span>
+    <img src="${product.img}" alt="" class="product-image" />
+    <span class="price">${product.prezzo}</span>
+  `;
+  productsContainer.appendChild(productElement);
+});
+
+const filters = document.querySelectorAll(".filter");
 
 filters.forEach((filter) => {
-  filter.addEventListener("change", () => {
-    const selectedOption = filter.options[filter.selectedIndex].value;
-    console.log(selectedOption);
-    filtra(selectedOption);
+  filter.addEventListener("click", () => {
+    productsContainer.innerHTML = "";
+    const filterName = filter.classList[1];
+    const filterId = filter.id;
+    filtra(filterId, filterName);
   });
 });
 
-function filtra(filtro) {
-    const productsContainer = document.querySelector(".products");
-  if (filtro == "tutti") {
-    productsArray.forEach((product) => {
-      const productElement = document.createElement("div");
-      productElement.classList.add("product");
-      productElement.innerHTML = `
-      <span class="product-name">${product.categoria}</span>
-      <img src="${product.img}" alt="" class="product-image" />
-      <span class="price">${product.prezzo}</span>
-    `;
-      productsContainer.appendChild(productElement);
-    });
-  } else {
-    productsArray.forEach((product) => {
-      const productElement = document.createElement("div");
-      productElement.classList.add("product");
-      productElement.innerHTML = `
-      <span class="product-name">${product.categoria}</span>
-      <img src="${product.img}" alt="" class="product-image" />
-      <span class="price">${product.prezzo}</span>
-    `;
-      productsContainer.appendChild(productElement);
-    });
+function filtra(opzione, filtro) {
+  const productsContainer = document.querySelector(".products");
+  switch (filtro) {
+    case "modello":
+      // code block
+      if (opzione == "all") {
+        productsArray.forEach((product) => {
+          const productElement = document.createElement("div");
+          productElement.classList.add("product");
+          productElement.id = product.idProdottoCatalogo;
+          productElement.innerHTML = `
+        <span class="product-name">${product.categoria}</span>
+        <img src="${product.img}" alt="" class="product-image" />
+        <span class="price">${product.prezzo}</span>
+      `;
+          productsContainer.appendChild(productElement);
+        });
+      } else {
+        productsArray.forEach((product) => {
+          if (product.modello == opzione) {
+            const productElement = document.createElement("div");
+            productElement.classList.add("product");
+            productElement.id = product.idProdottoCatalogo;
+            productElement.innerHTML = `
+          <span class="product-name">${product.categoria}</span>
+          <img src="${product.img}" alt="" class="product-image" />
+          <span class="price">${product.prezzo}</span>
+        `;
+            productsContainer.appendChild(productElement);
+          }
+        });
+      }
+      break;
+    case "colore":
+      // code block
+      if (opzione == "all") {
+        productsArray.forEach((product) => {
+          const productElement = document.createElement("div");
+          productElement.classList.add("product");
+          productElement.id = product.idProdottoCatalogo;
+          productElement.innerHTML = `
+        <span class="product-name">${product.categoria}</span>
+        <img src="${product.img}" alt="" class="product-image" />
+        <span class="price">${product.prezzo}</span>
+      `;
+          productsContainer.appendChild(productElement);
+        });
+      } else {
+        productsArray.forEach((product) => {
+          if (product.colore == opzione) {
+            const productElement = document.createElement("div");
+            productElement.classList.add("product");
+            productElement.id = product.idProdottoCatalogo;
+            productElement.innerHTML = `
+          <span class="product-name">${product.categoria}</span>
+          <img src="${product.img}" alt="" class="product-image" />
+          <span class="price">${product.prezzo}</span>
+        `;
+            productsContainer.appendChild(productElement);
+          }
+        });
+      }
+      break;
+    default:
+    // code block
   }
 }
