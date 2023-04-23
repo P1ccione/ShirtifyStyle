@@ -4,63 +4,73 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
+    <link rel="stylesheet" href="/css/prova.css" />
     <link rel="stylesheet" href="../css/navbar.css" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/catalogo.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
       integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o="
       crossorigin="anonymous"
     />
+    <title>Catalogo</title>
   </head>
   <body>
-    <nav>
-      <div class="logo">
-        <img src="../svg/logo.svg" alt="" />
-        <h1>T-Shirt STORE</h1>
-      </div>
-      <div class="openMenu">
-        <img src="../svg/burger.svg" alt="" class="nav-img" />
-      </div>
-      <ul class="mainMenu">
-        <li><a href="./">HOME</a></li>
-        <li><a href="./catalogo.html">CATALOGO</a></li>
-        <li><a href="./contacts.html">CONTATTI</a></li>
-        <li>
-          <a href="./cart.html"
-            ><img src="../svg/cart.svg" alt="" class="nav-img"
-          /></a>
-        </li>
-        <div class="closeMenu">
-          <img src="../svg/x.svg" alt="" class="nav-img" />
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="../svg/logo.svg" alt="" />
+          <h1>T-Shirt STORE</h1>
         </div>
-        <span class="icons">
-          <i class="fab fa-facebook"></i>
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-twitter"></i>
-        </span>
-      </ul>
-    </nav>
+        <div class="openMenu">
+          <img src="../svg/burger.svg" alt="" class="nav-img" />
+        </div>
+        <ul class="mainMenu">
+          <li><a href="#">HOME</a></li>
+          <li><a href="./catalogo.html">CATALOGO</a></li>
+          <li><a href="./contacts.html">CONTATTI</a></li>
+          <li>
+            <a href="./cart.html"
+              ><img src="../svg/cart.svg" alt="" class="nav-img"
+            /></a>
+          </li>
+          <div class="closeMenu">
+            <img src="../svg/x.svg" alt="" class="nav-img" />
+          </div>
+          <span class="icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+          </span>
+        </ul>
+      </nav>
+    </header>
 
-    <div class="container">
+    <div class="mainContainer">
       <h1 class="title">Catalogo</h1>
-      <div class="categories">
-        <div class="category t-shirt">
-          <img src="../img/default-placeholder-image-removebg-preview.png" style="opacity: .2;" alt="" id="t-shirt"/>
-          <h1>T-Shirt</h1>
+      <div class="subContainer">
+        <div class="filters">
+          <span class="filter-title">Modello</span>
+          <select name="" id="modello" class="select">
+            <option value="all">All</option>
+            <option value="uomo">Uomo</option>
+            <option value="donna">Donna</option>
+            <option value="bambino">Bambino</option>
+          </select>
+          <span class="filter-title">Colore</span>
+          <select name="" id="colore" class="select">
+            <option value="all">All</option>
+            <option value="rosso">Rosso</option>
+            <option value="blu">Blu</option>
+            <option value="verde">Verde</option>
+          </select>
+          <button class="btn">FILTRA</button>
         </div>
-        <div class="category long-sleeved-t-shirt">
-          <img src="../img/default-placeholder-image-removebg-preview.png" style="opacity: .2;" alt="" id="long-sleeved-t-shirt"/>
-          <h1>Maniche lunghe</h1>
-        </div>
-        <div class="category canotta">
-          <img src="../img/default-placeholder-image-removebg-preview.png" style="opacity: .2;" alt="" id="canotta"/>
-          <h1>Canotta</h1>
+        <div class="products">
         </div>
       </div>
     </div>
-    <script src="../scripts/main.js"></script>
-    <script src="../scripts/catalogo.js"></script>
   </body>
+  <script src="/scripts/prova.js"></script>
+  <script src="../scripts/main.js"></script>
 </html>

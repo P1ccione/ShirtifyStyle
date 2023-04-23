@@ -114,81 +114,48 @@ productsArray.forEach((product) => {
   productsContainer.appendChild(productElement);
 });
 
-const filters = document.querySelectorAll(".filter");
+const filterBtn = document.querySelector(".btn");
+let array = [];
 
-filters.forEach((filter) => {
-  filter.addEventListener("click", () => {
-    productsContainer.innerHTML = "";
-    const filterName = filter.classList[1];
-    const filterId = filter.id;
-    filtra(filterId, filterName);
+filterBtn.addEventListener("click", () => {
+  array = [];
+  const filterModel = document.querySelector("#modello");
+  const filterColor = document.querySelector("#colore");
+  productsContainer.innerHTML = "";
+  const optionModel = filterModel.options[filterModel.selectedIndex].value;
+  const optionColor = filterColor.options[filterColor.selectedIndex].value;
+
+  if (optionModel != "all" && optionColor != "all") {
+    productsArray.forEach((product) => {
+      if (optionModel == product.modello && optionColor == product.colore) {
+        array.push(product);
+      }
+    });
+  } else if(optionModel != "all" && optionColor == "all") {
+    productsArray.forEach((product) => {
+      if (optionModel == product.modello) {
+        array.push(product);
+      }
+    });
+  } else if(optionModel == "all" && optionColor != "all") {
+    productsArray.forEach((product) => {
+      if (optionColor == product.colore) {
+        array.push(product);
+      }
+    });
+  } else {
+    array = productsArray;
+  }
+
+  array.forEach((product) => {
+    const productElement = document.createElement("div");
+    productElement.classList.add("product");
+    productElement.id = product.idProdottoCatalogo;
+    productElement.innerHTML = `
+  <span class="product-name">${product.categoria}</span>
+  <img src="${product.img}" alt="" class="product-image" />
+  <span class="price">${product.prezzo}</span>
+`;
+    productsContainer.appendChild(productElement);
   });
 });
-
-function filtra(opzione, filtro) {
-  const productsContainer = document.querySelector(".products");
-  switch (filtro) {
-    case "modello":
-      // code block
-      if (opzione == "all") {
-        productsArray.forEach((product) => {
-          const productElement = document.createElement("div");
-          productElement.classList.add("product");
-          productElement.id = product.idProdottoCatalogo;
-          productElement.innerHTML = `
-        <span class="product-name">${product.categoria}</span>
-        <img src="${product.img}" alt="" class="product-image" />
-        <span class="price">${product.prezzo}</span>
-      `;
-          productsContainer.appendChild(productElement);
-        });
-      } else {
-        productsArray.forEach((product) => {
-          if (product.modello == opzione) {
-            const productElement = document.createElement("div");
-            productElement.classList.add("product");
-            productElement.id = product.idProdottoCatalogo;
-            productElement.innerHTML = `
-          <span class="product-name">${product.categoria}</span>
-          <img src="${product.img}" alt="" class="product-image" />
-          <span class="price">${product.prezzo}</span>
-        `;
-            productsContainer.appendChild(productElement);
-          }
-        });
-      }
-      break;
-    case "colore":
-      // code block
-      if (opzione == "all") {
-        productsArray.forEach((product) => {
-          const productElement = document.createElement("div");
-          productElement.classList.add("product");
-          productElement.id = product.idProdottoCatalogo;
-          productElement.innerHTML = `
-        <span class="product-name">${product.categoria}</span>
-        <img src="${product.img}" alt="" class="product-image" />
-        <span class="price">${product.prezzo}</span>
-      `;
-          productsContainer.appendChild(productElement);
-        });
-      } else {
-        productsArray.forEach((product) => {
-          if (product.colore == opzione) {
-            const productElement = document.createElement("div");
-            productElement.classList.add("product");
-            productElement.id = product.idProdottoCatalogo;
-            productElement.innerHTML = `
-          <span class="product-name">${product.categoria}</span>
-          <img src="${product.img}" alt="" class="product-image" />
-          <span class="price">${product.prezzo}</span>
-        `;
-            productsContainer.appendChild(productElement);
-          }
-        });
-      }
-      break;
-    default:
-    // code block
-  }
-}
