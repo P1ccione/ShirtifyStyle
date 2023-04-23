@@ -6,198 +6,72 @@
   list-style: none;
 }
 
-/*contatti */
-
-body {
-  background-color: black;
-  color: whitesmoke;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-}
-
 .mainContainer {
-    position: relative;
-    width: 100vw;
-    height: 85vh;
-}
-
-.titleContainer {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
-    width: 50%;
-    top: 20%;
-}
-
-h2 {
-    width: 100%;
-}
-
-p {
-    width: 100%;
-}
-
-.socialContainer {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-    top: 60%;
-    width: 50%;
-}
-
-.imgContainer {
+  width: 100vw;
+  height: auto;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
-  gap: 0.8rem;
+  flex-direction: column;
 }
 
-.socialImages {
-  background-color: white;
-  min-height: 10%;
-  max-width: 10%;
-  border-radius: 1em;
+.title {
+  height: 45px;
 }
 
-
-.formContainer {
-    position: absolute;
-    background-color: whitesmoke;
-    padding: 1.5rem;
-    color: black;
-    width: 40%;
-    border-radius: 0.5em;
-    left: 50%;
-    top: 50%;
-    transform: translateY(-50%);
+.subContainer {
+  width: 90%;
+  display: flex;
+  margin-top: 20px
 }
 
-form {
+.filter {
+  width: 30vw;
+  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  gap: 0.6em;
+  border: solid black 1px;
 }
 
-input {
-  border: none;
-  border-radius: .5em;
-  background-color: #daddda;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  font-size: 1rem;
+.filter-title {
+  margin-top: 20px;
+  height: 1.5rem;
 }
 
-.req {
-  color: red;
-}
-
-#messaggio {
-  background-color: #daddda;
-  border: none;
-  border-radius: .5em;
-  padding-top: 0.5em;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-}
-
-.bottoneInvio {
-  background-color: red;
-  height: 1.875em;
-  border: none;
+select {
+  height: 3rem;
+  border: solid black 1px;
   border-radius: 5px;
-  color: whitesmoke;
-  cursor: pointer;
-  transition: opacity 0.15s;
-  margin-top: .5em;
-}
-
-.bottoneInvio:hover {
-  opacity: 0.8;
-}
-
-.bottoneInvio:active {
-  opacity: 0.5;
+  appearance: none;
+  text-align: center;
 }
 
 
-@media (max-width: 1000px) {
 
-    .mainContainer {
-        position: relative;
-        width: 100vw;
-        height: 100vh;
-    }
 
-  body {
-    font-size: 18px;
-  }
-
-  .titleContainer
-   {
-    width: 500px;
-    top:5%;
-    left: 50%;
-    transform: translateX(-50%);
-    }
-
-  .socialContainer{
-    
-    width: 500px;
-   top: 83%;
-   left: 50%;
-   transform: translateX(-50%);
-  }
-
-  .formContainer {
-    width: 500px;
-    top: 17%;
-    transform: translateX(-50%);
- 
-  }
-
-  
+.products {
+  width: 70vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 15px;
+  border: solid black 1px;
 }
 
-
-@media (max-width: 580px) {
-
-    .titleContainer
-    {
-     width: 400px;
-     }
- 
-   .socialContainer{
-     width: 300px;
-   }
- 
-   .formContainer {
-    top: 20%;
-     width: 300px;
-  
-   }
- 
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.product-image {
+  width: 200px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 
-@media (max-width: 400px) {
-   
-    .titleContainer
-    {
-     width: 300px;
-     }
- 
-   .socialContainer{
-     width: 300px;
-   }
- 
-   .formContainer {
-     width: 250px;
-  
-   }
+.product-name {
+  margin-top: 20px;
+}
+
+.price {
+  margin-bottom: 20px;
 }

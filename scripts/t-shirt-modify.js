@@ -19,7 +19,7 @@ const immagineCategoria = document.querySelector(
   ".container .t-shirt .t-shirt-img"
 );
 
-immagineCategoria.style.backgroundImage = `url(../img/${modello}/${categoria}/immagine-${categoria}-${modello}-bianca.png)`;
+immagineCategoria.style.backgroundImage = `url(../img/${modello}/${categoria}/immagine-${categoria}-${modello}-bianco.png)`;
 document.querySelector("#personal-img").src =
   "../img/default-placeholder-image-removebg-preview.png";
 const colors = document.querySelectorAll(".fa-circle");
