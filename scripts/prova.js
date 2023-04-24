@@ -114,19 +114,6 @@ const productsArray = [
 const productsContainer = document.querySelector(".products");
 const filterBtn = document.querySelector(".btn");
 
-let newProductsArray = [];
-const includedProducts = {};
-
-for (const product of productsArray) {
-  const key = `${product.colore}-${product.modello}-${product.categoria}`;
-  if (!includedProducts[key] || !includedProducts[key][product.size]) {
-    newProductsArray.push(product);
-    includedProducts[key] = { [product.size]: true };
-  } else {
-    includedProducts[key][product.size] = true;
-  }
-}
-
 let filteredProducts = [];
 
 const modelloSelezionato = localStorage.getItem("modello");
@@ -146,14 +133,14 @@ if (modelloSelezionato) {
 }
 
 function showAllProducts() {
-  newProductsArray.forEach((product) => {
+  productsArray.forEach((product) => {
     renderProduct(product);
   });
   productClick();
 }
 
 function showProductsByModel(model) {
-  newProductsArray
+  productsArray
     .filter((product) => product.modello === model)
     .forEach((product) => renderProduct(product));
 
@@ -169,6 +156,7 @@ function renderProduct(product) {
       product.categoria + " " + product.modello
     }</span>
     <img src="${product.img}" alt="" class="product-image" />
+    <span class="text">taglia: ${product.taglia}</span>
     <span class="text">colore: ${product.colore}</span>
     <span class="text">prezzo: ${product.prezzo}</span>
   `;
@@ -183,7 +171,7 @@ filterBtn.addEventListener("click", () => {
   const optionColor = filterColor.options[filterColor.selectedIndex].value;
   const optionSize = filterSize.options[filterSize.selectedIndex].value;
 
-  filteredProducts = newProductsArray.filter(
+  filteredProducts = productsArray.filter(
     (product) =>
       (optionModel === "all" || product.modello === optionModel) &&
       (optionColor === "all" || product.colore === optionColor) &&
