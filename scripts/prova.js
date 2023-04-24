@@ -1,13 +1,13 @@
 const productsArray = [
   {
     idProdottoCatalogo: 1,
-    colore: "rosso",
-    taglia: "M",
+    colore: "bianco",
+    taglia: "S",
     prezzo: "€10.00",
     quantita: 534,
     infoSpedizione: "domani",
     categoria: "t-shirt",
-    img: "../img/uomo/t-shirt/immagine-t-shirt-uomo-rosso.png",
+    img: "../img/uomo/t-shirt/immagine-t-shirt-uomo-bianco.png",
     modello: "uomo",
   },
   {
@@ -24,7 +24,7 @@ const productsArray = [
   {
     idProdottoCatalogo: 3,
     colore: "viola",
-    taglia: "M",
+    taglia: "L",
     prezzo: "€10.00",
     quantita: 534,
     infoSpedizione: "domani",
@@ -35,7 +35,7 @@ const productsArray = [
   {
     idProdottoCatalogo: 4,
     colore: "rosso",
-    taglia: "M",
+    taglia: "XL",
     prezzo: "€10.00",
     quantita: 534,
     infoSpedizione: "domani",
@@ -68,7 +68,7 @@ const productsArray = [
   {
     idProdottoCatalogo: 7,
     colore: "rosso",
-    taglia: "M",
+    taglia: "S",
     prezzo: "€10.00",
     quantita: 534,
     infoSpedizione: "domani",
@@ -84,18 +84,18 @@ const productsArray = [
     quantita: 534,
     infoSpedizione: "domani",
     categoria: "canotta",
-    img: "../img/bambino/canotta/immagine-canotta-bambino-verde.png",
+    img: "../img/bambino/canotta/immagine-canotta-bambino-nero.png",
     modello: "bambino",
   },
   {
     idProdottoCatalogo: 9,
     colore: "blu",
-    taglia: "M",
+    taglia: "L",
     prezzo: "€10.00",
     quantita: 534,
     infoSpedizione: "domani",
     categoria: "long-sleeved-t-shirt",
-    img: "../img/bambino/long-sleeved-t-shirt/immagine-long-sleeved-t-shirt-bambino-blu.png",
+    img: "../img/bambino/long-sleeved-t-shirt/immagine-long-sleeved-t-shirt-bambino-rosa.png",
     modello: "bambino",
   },
 ];
@@ -109,53 +109,51 @@ productsArray.forEach((product) => {
   productElement.innerHTML = `
     <span class="product-name">${product.categoria}</span>
     <img src="${product.img}" alt="" class="product-image" />
-    <span class="price">${product.prezzo}</span>
+    <span class="text">colore: ${product.colore}</span>
+    <span class="text">prezzo: ${product.prezzo}</span>
   `;
   productsContainer.appendChild(productElement);
 });
 
 const filterBtn = document.querySelector(".btn");
-let array = [];
+let filteredProducts = [];
 
 filterBtn.addEventListener("click", () => {
-  array = [];
+  filteredProducts = [];
   const filterModel = document.querySelector("#modello");
   const filterColor = document.querySelector("#colore");
+  const filterSize = document.querySelector("#taglia");
   productsContainer.innerHTML = "";
   const optionModel = filterModel.options[filterModel.selectedIndex].value;
   const optionColor = filterColor.options[filterColor.selectedIndex].value;
+  const optionSize = filterSize.options[filterSize.selectedIndex].value;
 
-  if (optionModel != "all" && optionColor != "all") {
-    productsArray.forEach((product) => {
-      if (optionModel == product.modello && optionColor == product.colore) {
-        array.push(product);
-      }
-    });
-  } else if(optionModel != "all" && optionColor == "all") {
-    productsArray.forEach((product) => {
-      if (optionModel == product.modello) {
-        array.push(product);
-      }
-    });
-  } else if(optionModel == "all" && optionColor != "all") {
-    productsArray.forEach((product) => {
-      if (optionColor == product.colore) {
-        array.push(product);
-      }
+  filteredProducts = productsArray.filter(
+    (product) =>
+      (optionModel === "all" || product.modello === optionModel) &&
+      (optionColor === "all" || product.colore === optionColor) &&
+      (optionSize === "all" || product.taglia === optionSize)
+  );
+
+  if (filteredProducts.length != 0) {
+    filteredProducts.forEach((product) => {
+      const productElement = document.createElement("div");
+      productElement.classList.add("product");
+      productElement.id = product.idProdottoCatalogo;
+      productElement.innerHTML = `
+    <span class="product-name">${product.categoria + " " + product.modello}</span>
+    <img src="${product.img}" alt="" class="product-image" />
+    <span class="text">colore: ${product.colore}</span>
+    <span class="text">prezzo: ${product.prezzo}</span>
+  `;
+      productsContainer.classList.remove("active");
+      productsContainer.appendChild(productElement);
     });
   } else {
-    array = productsArray;
+    const text = document.createElement("span");
+    text.classList.add("product-text");
+    text.innerHTML = "Non ci sono prodotti con queste caratteristiche";
+    productsContainer.classList.add("active");
+    productsContainer.appendChild(text);
   }
-
-  array.forEach((product) => {
-    const productElement = document.createElement("div");
-    productElement.classList.add("product");
-    productElement.id = product.idProdottoCatalogo;
-    productElement.innerHTML = `
-  <span class="product-name">${product.categoria}</span>
-  <img src="${product.img}" alt="" class="product-image" />
-  <span class="price">${product.prezzo}</span>
-`;
-    productsContainer.appendChild(productElement);
-  });
 });
