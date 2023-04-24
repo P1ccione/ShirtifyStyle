@@ -81,6 +81,7 @@ p {
   left: 50%;
   transform: translateX(-50%);
   bottom: 50%;
+  display: block;
   text-align: center;
 }
 
@@ -152,15 +153,24 @@ input {
 
   .socialContainer {
     width: 500px;
-    top: 83%;
+    top: 75%;
     left: 50%;
     transform: translateX(-50%);
   }
 
   .formContainer {
-    width: 500px;
+    width: 25em;
     top: 17%;
     transform: translateX(-50%);
+  }
+
+  .thanksContainer {
+    top: 69%;
+  }
+
+  .socialImages {
+    min-height: 15%;
+    max-width: 15%;
   }
 }
 
@@ -171,6 +181,7 @@ input {
 
   .socialContainer {
     width: 300px;
+    top: 77%;
   }
 
   .formContainer {
@@ -178,8 +189,13 @@ input {
     width: 300px;
   }
   .thanksContainer {
-    top: 76%;
     width: 100%;
+    top: 72%;
+  }
+
+  .socialImages {
+    min-height: 20%;
+    max-width: 20%;
   }
 }
 
@@ -190,9 +206,34 @@ input {
 
   .socialContainer {
     width: 300px;
+    top: 79%;
   }
 
   .formContainer {
     width: 250px;
+  }
+
+  .thanksContainer {
+    top: 72%;
+  }
+}
+
+@media (min-width: 1001px) {
+  body {
+    font-size: 20px;
+  }
+  .formContainer {
+    width: 30%;
+    left: 55%;
+  }
+  .thanksContainer {
+    bottom: 15%;
+    left: 70%;
+    transform: translateX(-43%);
+  }
+
+  .socialImages {
+    min-height: 10%;
+    max-width: 10%;
   }
 }
