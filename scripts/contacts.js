@@ -1,3 +1,8 @@
+const form = document.querySelector('form');
+form.addEventListener('submit', (event) => {
+  event.preventDefault(); // prevent form submission
+  toggleThanks();
+});
 
 function toggleThanks() {
     const thanksDiv = document.querySelector('.thanksContainer');

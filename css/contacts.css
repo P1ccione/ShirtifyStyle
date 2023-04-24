@@ -77,11 +77,11 @@ p {
 }
 
 .thanksContainer {
+  display: none;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   bottom: 50%;
-  display: none;
   text-align: center;
 }
 
