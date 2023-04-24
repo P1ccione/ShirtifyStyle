@@ -13,7 +13,7 @@
       integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o="
       crossorigin="anonymous"
     />
-    <title>Contattaci</title>
+    <title>Catalogo</title>
   </head>
   <body>
     <header>
@@ -51,15 +51,20 @@
       <div class="subContainer">
         <div class="filters">
           <span class="filter-title">Modello</span>
-          <span class="filter modello" id="all">All</span>
-          <span class="filter modello" id="uomo">Uomo</span>
-          <span class="filter modello" id="donna">Donna</span>
-          <span class="filter modello" id="bambino">Bambino</span>
+          <select name="" id="modello" class="select">
+            <option value="all">All</option>
+            <option value="uomo">Uomo</option>
+            <option value="donna">Donna</option>
+            <option value="bambino">Bambino</option>
+          </select>
           <span class="filter-title">Colore</span>
-          <span class="filter colore" id="all">All</span>
-          <span class="filter colore" id="rosso">Rosso</span>
-          <span class="filter colore" id="verde">Verde</span>
-          <span class="filter colore" id="blu">Blu</span>
+          <select name="" id="colore" class="select">
+            <option value="all">All</option>
+            <option value="rosso">Rosso</option>
+            <option value="blu">Blu</option>
+            <option value="verde">Verde</option>
+          </select>
+          <button class="btn">FILTRA</button>
         </div>
         <div class="products">
         </div>
