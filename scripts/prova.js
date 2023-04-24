@@ -1,4 +1,4 @@
-const productsArray = [
+const array = [
   {
     idProdottoCatalogo: 1,
     colore: "bianco",
@@ -70,7 +70,7 @@ const productsArray = [
     colore: "blu",
     taglia: "M",
     prezzo: "€10.00",
-    quantita: 534,
+    quantita: 10,
     infoSpedizione: "domani",
     categoria: "long-sleeved-t-shirt",
     img: "../img/donna/long-sleeved-t-shirt/immagine-long-sleeved-t-shirt-donna-blu.png",
@@ -111,6 +111,9 @@ const productsArray = [
   },
 ];
 
+localStorage.setItem("arrayProdotti", JSON.stringify(array));
+const productsArray = JSON.parse(localStorage.getItem("arrayProdotti"));
+
 const productsContainer = document.querySelector(".products");
 const filterBtn = document.querySelector(".btn");
 
@@ -133,7 +136,7 @@ if (modelloSelezionato) {
 }
 
 function showAllProducts() {
-  productsArray.forEach((product) => {
+  productsArray.filter((product) => product.quantita > 0).forEach((product) => {
     renderProduct(product);
   });
   productClick();
@@ -141,7 +144,7 @@ function showAllProducts() {
 
 function showProductsByModel(model) {
   productsArray
-    .filter((product) => product.modello === model)
+    .filter((product) => product.modello === model && product.quantita > 0)
     .forEach((product) => renderProduct(product));
 
   productClick();
