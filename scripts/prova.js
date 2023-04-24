@@ -11,6 +11,17 @@ const productsArray = [
     modello: "uomo",
   },
   {
+    idProdottoCatalogo: 10,
+    colore: "bianco",
+    taglia: "M",
+    prezzo: "€10.00",
+    quantita: 534,
+    infoSpedizione: "domani",
+    categoria: "t-shirt",
+    img: "../img/uomo/t-shirt/immagine-t-shirt-uomo-bianco.png",
+    modello: "uomo",
+  },
+  {
     idProdottoCatalogo: 2,
     colore: "blu",
     taglia: "M",
@@ -78,7 +89,7 @@ const productsArray = [
   },
   {
     idProdottoCatalogo: 8,
-    colore: "verde",
+    colore: "nero",
     taglia: "M",
     prezzo: "€10.00",
     quantita: 534,
@@ -89,7 +100,7 @@ const productsArray = [
   },
   {
     idProdottoCatalogo: 9,
-    colore: "blu",
+    colore: "rosa",
     taglia: "L",
     prezzo: "€10.00",
     quantita: 534,
@@ -101,29 +112,61 @@ const productsArray = [
 ];
 
 const productsContainer = document.querySelector(".products");
+const filterBtn = document.querySelector(".btn");
 
-productsArray.forEach((product) => {
+let filteredProducts = [];
+
+const modelloSelezionato = localStorage.getItem("modello");
+
+const selectModello = document.getElementById("modello");
+
+if (modelloSelezionato) {
+  for (let i = 0; i < selectModello.options.length; i++) {
+    if (selectModello.options[i].value === modelloSelezionato) {
+      selectModello.selectedIndex = i;
+      break;
+    }
+  }
+  showProductsByModel(modelloSelezionato);
+} else {
+  showAllProducts();
+}
+
+function showAllProducts() {
+  productsArray.forEach((product) => {
+    renderProduct(product);
+  });
+  productClick();
+}
+
+function showProductsByModel(model) {
+  productsArray
+    .filter((product) => product.modello === model)
+    .forEach((product) => renderProduct(product));
+
+  productClick();
+}
+
+function renderProduct(product) {
   const productElement = document.createElement("div");
   productElement.classList.add("product");
   productElement.id = product.idProdottoCatalogo;
   productElement.innerHTML = `
-    <span class="product-name">${product.categoria}</span>
+    <span class="product-name">${
+      product.categoria + " " + product.modello
+    }</span>
     <img src="${product.img}" alt="" class="product-image" />
+    <span class="text">taglia: ${product.taglia}</span>
     <span class="text">colore: ${product.colore}</span>
     <span class="text">prezzo: ${product.prezzo}</span>
   `;
   productsContainer.appendChild(productElement);
-});
-
-const filterBtn = document.querySelector(".btn");
-let filteredProducts = [];
+}
 
 filterBtn.addEventListener("click", () => {
-  filteredProducts = [];
   const filterModel = document.querySelector("#modello");
   const filterColor = document.querySelector("#colore");
   const filterSize = document.querySelector("#taglia");
-  productsContainer.innerHTML = "";
   const optionModel = filterModel.options[filterModel.selectedIndex].value;
   const optionColor = filterColor.options[filterColor.selectedIndex].value;
   const optionSize = filterSize.options[filterSize.selectedIndex].value;
@@ -135,20 +178,14 @@ filterBtn.addEventListener("click", () => {
       (optionSize === "all" || product.taglia === optionSize)
   );
 
+  productsContainer.innerHTML = "";
+
   if (filteredProducts.length != 0) {
+    productsContainer.classList.remove("active");
     filteredProducts.forEach((product) => {
-      const productElement = document.createElement("div");
-      productElement.classList.add("product");
-      productElement.id = product.idProdottoCatalogo;
-      productElement.innerHTML = `
-    <span class="product-name">${product.categoria + " " + product.modello}</span>
-    <img src="${product.img}" alt="" class="product-image" />
-    <span class="text">colore: ${product.colore}</span>
-    <span class="text">prezzo: ${product.prezzo}</span>
-  `;
-      productsContainer.classList.remove("active");
-      productsContainer.appendChild(productElement);
+      renderProduct(product);
     });
+    productClick();
   } else {
     const text = document.createElement("span");
     text.classList.add("product-text");
@@ -157,3 +194,13 @@ filterBtn.addEventListener("click", () => {
     productsContainer.appendChild(text);
   }
 });
+
+function productClick() {
+  const products = document.querySelectorAll(".product");
+  products.forEach((product) => {
+    product.addEventListener("click", () => {
+      localStorage.setItem("productSelected", product.id);
+      window.location.href = "./t-shirt-modify.html";
+    });
+  });
+}
