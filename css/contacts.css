@@ -81,7 +81,7 @@ p {
   left: 50%;
   transform: translateX(-50%);
   bottom: 50%;
-  display: block;
+  display: none;
   text-align: center;
 }
 
@@ -227,7 +227,7 @@ input {
     left: 55%;
   }
   .thanksContainer {
-    bottom: 15%;
+    bottom: 12%;
     left: 70%;
     transform: translateX(-43%);
   }
