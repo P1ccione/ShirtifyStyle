@@ -6,94 +6,110 @@
   list-style: none;
 }
 
-/*titolo catalogo*/
+.mainContainer {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .title {
   display: flex;
   justify-content: center;
   font-size: 50px;
 }
 
-/*container generale*/
-.container {
+.subContainer {
+  width: 90%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin-top: 20px;
 }
 
-.categories {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-}
-
-/*t-shirt*/
-.category {
+.filters {
+  width: 25vw;
+  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding: 10px;
+}
+
+.filter-title {
+  margin-top: 20px;
+  height: 3rem;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  display: flex;
+  width: 80%;
   align-items: center;
-  padding: 5px;
-  background-color: black;
-  color: white;
-  border: 1px solid white;
-  width: 30vw;
-  height: 30vw;
+  justify-content: center;
+}
+
+.select {
+  height: 50px;
+  width: 80%;
+  border: solid black 1px;
+  border-radius: 5px;
+  appearance: none;
+  text-align: center;
   cursor: pointer;
 }
 
-.category img {
-  width: 20vw;
-  height: 20vw;
+.btn {
+  margin-top: 20px;
+  height: 50px;
+  cursor: pointer;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  width: 80%;
 }
 
-@media screen and (max-width: 750px) {
-  .categories {
-
-    flex-direction: column;
-  }
-  
-  .category {
-    width: 50vw;
-    height: 50vw;
-    margin-bottom: 40px;
-
-  }
-
-  .category img {
-    width: 30vw;
-    height: 30vw;
-  }
-
-
+.btn:hover {
+  background-color: rgb(56, 24, 199);
 }
 
-
-@media screen and (max-width: 450px) {
-
-  .category {
-    width: 70vw;
-    height: 70vw;
-    margin-bottom: 60px;
-
-  }
-
-  .category img {
-    width: 50vw;
-    height: 50vw;
+.products {
+  width: 70vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
 }
 
-
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid black 1px;
+  cursor: pointer;
+  padding: 10px;
+  height: auto;
+  max-height: 330px;
 }
 
-
-@media screen and (max-width: 350px) {
-
-  .category img {
-    width: 40vw;
-    height: 40vw;
+.product:hover {
+  box-shadow: 0 0 16px 6px #000000;
+  background-color: rgb(185 185 180);
 }
 
+.product-image {
+  width: 200px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 
+.product-name {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-text {
+  font-size: 3rem;
+  text-align: center;
 }
