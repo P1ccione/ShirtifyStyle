@@ -81,7 +81,8 @@
   border: solid black 1px;
   cursor: pointer;
   padding: 10px;
-  height: 300px;
+  height: auto;
+  max-height: 320px;
 }
 
 .product:hover {
@@ -97,6 +98,7 @@
 
 .product-name {
   font-size: 1.3rem;
+  text-align: center;
 }
 
 .active {

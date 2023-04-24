@@ -1,5 +1,9 @@
 let modello = localStorage.getItem("modello");
 let categoria = localStorage.getItem("categoria");
+// let productSelected = localStorage.getItem("productSelected");
+// if (productSelected === null) {
+//   window.location.href = "./catalogo.html";
+// }
 
 if (modello === null) {
   localStorage.setItem("modello", "uomo");
