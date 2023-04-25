@@ -1,11 +1,35 @@
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    text-decoration: none;
-    list-style: none;
-  }
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-decoration: none;
+  list-style: none;
+}
 
-  .privacy {
-    margin: 30px;
+.privacy {
+  margin: 30px;
+  font-size: 2vh;
+}
+
+#inizioP {
+  margin-top: 0.5em;
+}
+#continuaP {
+  margin-top: 0.5em;
+  font-weight: 600;
+}
+
+#titoloP {
+  font-size: 5.6vh;
+}
+
+@media (max-width: 580px) {
+  #titoloP {
+    font-size: 5vh;
   }
+  .privacy {
+    font-size: 2.1vh;
+    text-align: center;
+    margin: 1em;
+  }
+}
