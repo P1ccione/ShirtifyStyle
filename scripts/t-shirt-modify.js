@@ -1,6 +1,10 @@
 const productsArray = JSON.parse(localStorage.getItem("arrayProdotti"));
 const productSelected = JSON.parse(localStorage.getItem("productSelected"));
 
+if(productSelected == null) {
+  window.location.href = "./catalogo.html";
+}
+
 const productImage = document.querySelector(".t-shirt-img");
 const priceSpan = document.querySelector("#price-span");
 const arrayColors = [];
