@@ -102,6 +102,7 @@ hr {
   border-radius: 5px;
   appearance: none;
   text-align: center;
+  cursor: pointer;
 }
 
 input::-webkit-outer-spin-button,
@@ -116,6 +117,7 @@ input::-webkit-inner-spin-button {
   border-radius: 5px;
   appearance: none;
   text-align: center;
+  cursor: pointer;
 }
 #color {
   width: 71px;
@@ -123,6 +125,7 @@ input::-webkit-inner-spin-button {
   border-radius: 5px;
   appearance: none;
   text-align: center;
+  cursor: pointer;
 }
 
 .container .subtitle {
