@@ -117,6 +117,13 @@ input::-webkit-inner-spin-button {
   appearance: none;
   text-align: center;
 }
+#color {
+  width: 71px;
+  border: solid black 1px;
+  border-radius: 5px;
+  appearance: none;
+  text-align: center;
+}
 
 .container .subtitle {
   font-size: 2rem;

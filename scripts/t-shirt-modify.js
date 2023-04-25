@@ -1,51 +1,33 @@
-let modello = localStorage.getItem("modello");
-let categoria = localStorage.getItem("categoria");
-// let productSelected = localStorage.getItem("productSelected");
-// if (productSelected === null) {
-//   window.location.href = "./catalogo.html";
-// }
+const productsArray = JSON.parse(localStorage.getItem("arrayProdotti"));
+const productSelected = JSON.parse(localStorage.getItem("productSelected"));
 
-if (modello === null) {
-  localStorage.setItem("modello", "uomo");
-  modello = localStorage.getItem("modello");
+const productImage = document.querySelector(".t-shirt-img");
+const priceSpan = document.querySelector("#price-span");
+let colorSelect = document.querySelector("#color");
+let sizeSelect = document.querySelector("#size");
+let newProductSelectedt = productSelected;
 
-  if (categoria === null) {
-    localStorage.setItem("categoria", "t-shirt");
-    categoria = localStorage.getItem("categoria");
+priceSpan.innerHTML = `${productSelected.prezzo} €`;
+productImage.style.backgroundImage = `url(${productSelected.img}`;
+
+const imageFile = document.querySelector("#file");
+const imageTshirt = document.querySelector("#personal-img");
+
+for (let i = 0; i < colorSelect.options.length; i++) {
+  if (colorSelect.options[i].value === productSelected.colore) {
+    colorSelect.selectedIndex = i;
+    break;
   }
 }
 
-if (categoria === null) {
-  localStorage.setItem("categoria", "t-shirt");
+for (let i = 0; i < sizeSelect.options.length; i++) {
+  if (sizeSelect.options[i].value === productSelected.taglia) {
+    sizeSelect.selectedIndex = i;
+    break;
+  }
 }
 
-const immagineCategoria = document.querySelector(
-  ".container .t-shirt .t-shirt-img"
-);
-
-immagineCategoria.style.backgroundImage = `url(../img/${modello}/${categoria}/immagine-${categoria}-${modello}-bianco.png)`;
-document.querySelector("#personal-img").src =
-  "../img/default-placeholder-image-removebg-preview.png";
-const colors = document.querySelectorAll(".fa-circle");
-const tShirt = document.querySelector(".container .t-shirt .t-shirt-img");
-
-colors.forEach((color) => {
-  color.addEventListener("click", () => {
-    setColor(color);
-  });
-});
-function setColor(color) {
-  colors.forEach((color) => {
-    color.classList.remove("active");
-  });
-  tShirt.style.backgroundImage = `url(../img/${modello}/${categoria}/immagine-${categoria}-${modello}-${color.id}.png)`;
-  color.classList.add("active");
-}
-
-const imageFile = document.querySelector("#file");
-const quantity = document.querySelector("#quantity");
-const price = document.querySelector("#price-span");
-const imageTshirt = document.querySelector("#personal-img");
+sizeSelect = document.querySelector("#size");
 
 imageFile.addEventListener("change", () => {
   const file = imageFile.files[0];
@@ -56,6 +38,56 @@ imageFile.addEventListener("change", () => {
   reader.readAsDataURL(file);
 });
 
-quantity.addEventListener("change", () => {
-  price.innerHTML = `${10 * parseInt(quantity.value)} €`;
+colorSelect.addEventListener("change", () => {
+  const colorSelect = document.querySelector("#color");
+  const color = colorSelect.options[colorSelect.selectedIndex].value;
+  let control = false;
+  productsArray.forEach((product) => {
+    if (
+      product.modello == newProductSelectedt.modello &&
+      product.categoria == newProductSelectedt.categoria &&
+      product.taglia == newProductSelectedt.taglia &&
+      product.colore == color
+    ) {
+      productImage.style.backgroundImage = `url(${product.img}`;
+      newProductSelectedt = product;
+      control = true;
+    }
+  });
+  if(control == false) {
+    alert(`Non ci sono ${newProductSelectedt.categoria} per ${newProductSelectedt.modello} di taglia ${newProductSelectedt.taglia} con colore ${color}`)  
+    for (let i = 0; i < colorSelect.options.length; i++) {
+      if (colorSelect.options[i].value === newProductSelectedt.colore) {
+        colorSelect.selectedIndex = i;
+        break;
+      }
+    }
+  }
+});
+
+sizeSelect.addEventListener("change", () => {
+  const sizeSelect = document.querySelector("#size");
+  const size = sizeSelect.options[sizeSelect.selectedIndex].value;
+  let control = false;
+  productsArray.forEach((product) => {
+    if (
+      product.modello == newProductSelectedt.modello &&
+      product.categoria == newProductSelectedt.categoria &&
+      product.colore == newProductSelectedt.colore &&
+      product.taglia == size
+    ) {
+      productImage.style.backgroundImage = `url(${product.img}`;
+      newProductSelectedt = product;
+      control = true;
+    }
+  });
+  if(control == false) {
+    alert(`Non ci sono ${newProductSelectedt.categoria} per ${newProductSelectedt.modello} di colore ${newProductSelectedt.colore} con taglia ${size}`)
+    for (let i = 0; i < sizeSelect.options.length; i++) {
+      if (sizeSelect.options[i].value === newProductSelectedt.taglia) {
+        sizeSelect.selectedIndex = i;
+        break;
+      }
+    }
+  }
 });

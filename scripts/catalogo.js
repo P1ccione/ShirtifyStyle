@@ -3,7 +3,7 @@ const array = [
     idProdottoCatalogo: 1,
     colore: "bianco",
     taglia: "S",
-    prezzo: "€10.00",
+    prezzo: 10.00,
     quantita: 534,
     infoSpedizione: "domani",
     categoria: "t-shirt",
@@ -14,7 +14,7 @@ const array = [
     idProdottoCatalogo: 10,
     colore: "bianco",
     taglia: "M",
-    prezzo: "€10.00",
+    prezzo: 10.00,
     quantita: 534,
     infoSpedizione: "domani",
     categoria: "t-shirt",
@@ -25,7 +25,7 @@ const array = [
     idProdottoCatalogo: 2,
     colore: "blu",
     taglia: "M",
-    prezzo: "€10.00",
+    prezzo: 10.00,
     quantita: 534,
     infoSpedizione: "domani",
     categoria: "canotta",
@@ -36,7 +36,7 @@ const array = [
     idProdottoCatalogo: 3,
     colore: "viola",
     taglia: "L",
-    prezzo: "€10.00",
+    prezzo: 10.00,
     quantita: 534,
     infoSpedizione: "domani",
     categoria: "long-sleeved-t-shirt",
@@ -47,7 +47,7 @@ const array = [
     idProdottoCatalogo: 4,
     colore: "rosso",
     taglia: "XL",
-    prezzo: "€10.00",
+    prezzo: 10.00,
     quantita: 534,
     infoSpedizione: "domani",
     categoria: "t-shirt",
@@ -58,7 +58,7 @@ const array = [
     idProdottoCatalogo: 5,
     colore: "verde",
     taglia: "M",
-    prezzo: "€10.00",
+    prezzo: 10.00,
     quantita: 534,
     infoSpedizione: "domani",
     categoria: "canotta",
@@ -69,7 +69,7 @@ const array = [
     idProdottoCatalogo: 6,
     colore: "blu",
     taglia: "M",
-    prezzo: "€10.00",
+    prezzo: 10.00,
     quantita: 10,
     infoSpedizione: "domani",
     categoria: "long-sleeved-t-shirt",
@@ -77,10 +77,32 @@ const array = [
     modello: "donna",
   },
   {
+    idProdottoCatalogo: 11,
+    colore: "rosso",
+    taglia: "M",
+    prezzo: 10.00,
+    quantita: 11,
+    infoSpedizione: "domani",
+    categoria: "long-sleeved-t-shirt",
+    img: "../img/donna/long-sleeved-t-shirt/immagine-long-sleeved-t-shirt-donna-rosso.png",
+    modello: "donna",
+  },
+  {
+    idProdottoCatalogo: 12,
+    colore: "rosso",
+    taglia: "L",
+    prezzo: 10.00,
+    quantita: 11,
+    infoSpedizione: "domani",
+    categoria: "long-sleeved-t-shirt",
+    img: "../img/donna/long-sleeved-t-shirt/immagine-long-sleeved-t-shirt-donna-rosso.png",
+    modello: "donna",
+  },
+  {
     idProdottoCatalogo: 7,
     colore: "rosso",
     taglia: "S",
-    prezzo: "€10.00",
+    prezzo: 10.00,
     quantita: 534,
     infoSpedizione: "domani",
     categoria: "t-shirt",
@@ -91,7 +113,7 @@ const array = [
     idProdottoCatalogo: 8,
     colore: "nero",
     taglia: "M",
-    prezzo: "€10.00",
+    prezzo: 10.00,
     quantita: 534,
     infoSpedizione: "domani",
     categoria: "canotta",
@@ -102,7 +124,7 @@ const array = [
     idProdottoCatalogo: 9,
     colore: "rosa",
     taglia: "L",
-    prezzo: "€10.00",
+    prezzo: 10.00,
     quantita: 534,
     infoSpedizione: "domani",
     categoria: "long-sleeved-t-shirt",
@@ -136,9 +158,11 @@ if (modelloSelezionato) {
 }
 
 function showAllProducts() {
-  productsArray.filter((product) => product.quantita > 0).forEach((product) => {
-    renderProduct(product);
-  });
+  productsArray
+    .filter((product) => product.quantita > 0)
+    .forEach((product) => {
+      renderProduct(product);
+    });
   productClick();
 }
 
@@ -202,7 +226,11 @@ function productClick() {
   const products = document.querySelectorAll(".product");
   products.forEach((product) => {
     product.addEventListener("click", () => {
-      localStorage.setItem("productSelected", product.id);
+      productsArray.forEach((product2) => {
+        if(product2.idProdottoCatalogo == product.id) {
+          localStorage.setItem("productSelected", JSON.stringify(product2));
+        }
+      });
       window.location.href = "./t-shirt-modify.html";
     });
   });
