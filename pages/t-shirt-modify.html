@@ -62,53 +62,25 @@
             <hr />
             <div class="section">
               <span class="section-title">Prezzo</span>
-              <span class="value" id="price-span">10 €</span>
+              <span class="value" id="price-span"></span>
             </div>
             <div class="section">
               <span class="section-title">Materiali</span>
               <span class="value">100% cotone</span>
             </div>
-            <div class="section">
-              <span class="section-title">Colore</span>
-              <div class="colors">
-                <i
-                  class="fa-regular fa-circle active"
-                  style="color: #000000"
-                  id="bianco"
-                ></i>
-                <i
-                  class="fa-solid fa-circle"
-                  style="color: #000000"
-                  id="nero"
-                ></i>
-                <i
-                  class="fa-solid fa-circle"
-                  style="color: #f00606"
-                  id="rosso"
-                ></i>
-                <i
-                  class="fa-solid fa-circle"
-                  style="color: #2f07e1"
-                  id="blu"
-                ></i>
-                <i
-                  class="fa-solid fa-circle"
-                  style="color: #19c311"
-                  id="verde"
-                ></i>
-                <i
-                  class="fa-solid fa-circle"
-                  style="color: #df6489"
-                  id="rosa"
-                ></i>
-                <i
-                  class="fa-solid fa-circle"
-                  style="color: #820964"
-                  id="viola"
-                ></i>
-              </div>
-            </div>
             <form action="" class="modify-form">
+              <div class="section">
+                <label for="" class="section-title">Colore</label>
+                <select name="color-input" id="color" required>
+                  <option value="verde">Verde</option>
+                  <option value="rosso">Rosso</option>
+                  <option value="nero">Nero</option>
+                  <option value="bianco">Bianco</option>
+                  <option value="blu">Blu</option>
+                  <option value="rosa">Rosa</option>
+                  <option value="rosa">Viola</option>
+                </select>
+              </div>
               <div class="section">
                 <label for="size" class="section-title">Taglia</label>
                 <select name="size-input" id="size" required>
