@@ -4,10 +4,11 @@
   border: 0;
   text-decoration: none;
   list-style: none;
+  /* outline: 1px solid orange; */
 }
 
 .mainContainer {
-  width: 100vw;
+
   height: auto;
   display: flex;
   align-items: center;
@@ -23,16 +24,26 @@
 .subContainer {
   width: 90%;
   display: flex;
+  align-items: center;
+  flex-direction: column;
   margin-top: 20px;
 }
 
+.filter {
+  margin: 20px;
+  width: 200px;
+}
+
+.subdiv {
+  display: flex;
+}
+
 .filters {
-  width: 25vw;
   height: auto;
   display: flex;
   flex-direction: column;
   padding: 10px;
-  margin-right: 20px;
+  align-items: center;
 }
 
 .filter-title {
@@ -71,10 +82,10 @@
 }
 
 .products {
-  width: 70vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 15px;
+  margin-top: 50px;
 }
 
 .product {
@@ -115,18 +126,11 @@
   text-align: center;
 }
 
-@media (max-width: 1000px) {
-  .products {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 @media (max-width: 750px) {
   .products {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50vw;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 85vw;
   }
 
   .product {
@@ -139,11 +143,33 @@
     margin-bottom: 30px;
   }
 
+  .subdiv {
+    flex-direction: column;
+  }
+
+  .filter {
+    margin-top: 0;
+  }
+
+  .filter-title {
+    margin-top: 0px;
+  }
+
   .subContainer {
     width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70vw;
   }
 }

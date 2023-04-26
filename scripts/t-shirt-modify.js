@@ -1,33 +1,33 @@
 const productsArray = JSON.parse(localStorage.getItem("arrayProdotti"));
 const productSelected = JSON.parse(localStorage.getItem("productSelected"));
 
-if(productSelected == null) {
+if (productSelected == null) {
   window.location.href = "./catalogo.html";
 }
 
 const productImage = document.querySelector(".t-shirt-img");
+const title = document.querySelector(".title");
 const priceSpan = document.querySelector("#price-span");
-const arrayColors = [];
-const arraySizes = [];
 const colorSelect = document.querySelector("#color");
 const sizeSelect = document.querySelector("#size");
-let newProductSelectedt = productSelected;
+let newProductSelected = productSelected;
 const imageFile = document.querySelector("#file");
 const imageTshirt = document.querySelector("#personal-img");
 const quantityInput = document.querySelector("#quantity");
 
+title.innerHTML = `${productSelected.categoria} ${productSelected.modello}`;
 priceSpan.innerHTML = `${productSelected.prezzo} €`;
 productImage.style.backgroundImage = `url(${productSelected.img}`;
 
 function changeOption() {
   for (let i = 0; i < colorSelect.options.length; i++) {
-    if (colorSelect.options[i].value === newProductSelectedt.colore) {
+    if (colorSelect.options[i].value === newProductSelected.colore) {
       colorSelect.selectedIndex = i;
       break;
     }
   }
   for (let i = 0; i < sizeSelect.options.length; i++) {
-    if (sizeSelect.options[i].value === newProductSelectedt.taglia) {
+    if (sizeSelect.options[i].value === newProductSelected.taglia) {
       sizeSelect.selectedIndex = i;
       break;
     }
@@ -37,22 +37,23 @@ function changeOption() {
 function changeColorsSizes() {
   const arrayColors = [];
   const arraySizes = [];
-  productsArray.forEach((product) => {
+  productsArray.forEach((product, index) => {
     if (
-      product.modello == newProductSelectedt.modello &&
-      product.categoria == newProductSelectedt.categoria &&
-      product.taglia == newProductSelectedt.taglia &&
-      !(product.colore in arrayColors)
+      product.modello == newProductSelected.modello &&
+      product.categoria == newProductSelected.categoria
     ) {
-      arrayColors.push(product.colore);
+      if (!arrayColors.includes(product.colore)) {
+        arrayColors.push(product.colore);
+      }
     }
     if (
-      product.modello == newProductSelectedt.modello &&
-      product.categoria == newProductSelectedt.categoria &&
-      product.colore == newProductSelectedt.colore &&
-      !(product.taglia in arraySizes)
+      product.modello == newProductSelected.modello &&
+      product.categoria == newProductSelected.categoria &&
+      product.colore == newProductSelected.colore
     ) {
-      arraySizes.push(product.taglia);
+      if (!arraySizes.includes(product.taglia)) {
+        arraySizes.push(product.taglia);
+      }
     }
   });
   colorSelect.innerHTML = "";
@@ -71,19 +72,53 @@ function changeColorsSizes() {
   }
 }
 
-function showProduct() {
-  const colorSelect = document.querySelector("#color");
+function showProductByColor() {
   const color = colorSelect.options[colorSelect.selectedIndex].value;
   const size = sizeSelect.options[sizeSelect.selectedIndex].value;
+  let control = false;
   productsArray.forEach((product) => {
     if (
-      product.modello == newProductSelectedt.modello &&
-      product.categoria == newProductSelectedt.categoria &&
+      product.modello == newProductSelected.modello &&
+      product.categoria == newProductSelected.categoria &&
       product.taglia == size &&
       product.colore == color
     ) {
       productImage.style.backgroundImage = `url(${product.img}`;
-      newProductSelectedt = product;
+      newProductSelected = product;
+      changeColorsSizes();
+      changeOption();
+    } else {
+      control = true;
+    }
+  });
+  if (control == true) {
+    productsArray.forEach((product) => {
+      if (
+        product.modello == newProductSelected.modello &&
+        product.categoria == newProductSelected.categoria &&
+        product.colore == color
+      ) {
+        productImage.style.backgroundImage = `url(${product.img}`;
+        newProductSelected = product;
+        changeColorsSizes();
+        changeOption();
+      }
+    });
+  }
+}
+
+function showProductBySize() {
+  const color = colorSelect.options[colorSelect.selectedIndex].value;
+  const size = sizeSelect.options[sizeSelect.selectedIndex].value;
+  productsArray.forEach((product) => {
+    if (
+      product.modello == newProductSelected.modello &&
+      product.categoria == newProductSelected.categoria &&
+      product.taglia == size &&
+      product.colore == color
+    ) {
+      productImage.style.backgroundImage = `url(${product.img}`;
+      newProductSelected = product;
       changeColorsSizes();
       changeOption();
     }
@@ -103,14 +138,14 @@ imageFile.addEventListener("change", () => {
 });
 
 colorSelect.addEventListener("change", () => {
-  showProduct();
+  showProductByColor();
 });
 
 sizeSelect.addEventListener("change", () => {
-  showProduct();
+  showProductBySize();
 });
 
 quantityInput.addEventListener("change", () => {
   const quantity = parseInt(quantityInput.value);
-  priceSpan.innerHTML = `${quantity * newProductSelectedt.prezzo} €`;
+  priceSpan.innerHTML = `${quantity * newProductSelected.prezzo} €`;
 });

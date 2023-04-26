@@ -99,6 +99,17 @@ const array = [
     modello: "donna",
   },
   {
+    idProdottoCatalogo: 13,
+    colore: "viola",
+    taglia: "XL",
+    prezzo: 10.00,
+    quantita: 11,
+    infoSpedizione: "domani",
+    categoria: "long-sleeved-t-shirt",
+    img: "../img/donna/long-sleeved-t-shirt/immagine-long-sleeved-t-shirt-donna-viola.png",
+    modello: "donna",
+  },
+  {
     idProdottoCatalogo: 7,
     colore: "rosso",
     taglia: "S",
