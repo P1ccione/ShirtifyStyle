@@ -180,7 +180,7 @@ if (modelloSelezionato) {
 }
 
 function showAllProducts() {
-  forEach((product) => {
+  productsArray.forEach((product) => {
     renderProduct(product);
   });
   productClick();
