@@ -166,7 +166,8 @@ input {
   }
 
   .thanksContainer {
-    top: 86%;
+    width: 100%;
+    top: 84%;
   }
 
   .socialImages {
@@ -191,7 +192,7 @@ input {
   }
   .thanksContainer {
     width: 100%;
-    top: 89%;
+    top: 87%;
   }
 
   .socialImages {
@@ -207,7 +208,7 @@ input {
 
   .socialContainer {
     width: 300px;
-    top: 96%;
+    top: 95%;
   }
 
   .formContainer {
@@ -215,7 +216,7 @@ input {
   }
 
   .thanksContainer {
-    top: 89%;
+    top: 86%;
   }
 }
 
