@@ -18,11 +18,11 @@ function show() {
   mainMenu.style.top = "0";
 }
 function close() {
-  mainMenu.style.top = "-100%";
+  mainMenu.style.top = "-100vh";
 }
 
 const logo = document.querySelector("nav .logo");
 
 logo.addEventListener("click", () => {
-  window.location.href = "./"
+  window.location.href = "../"
 })
