@@ -1,4 +1,4 @@
-const productsArray = JSON.parse(localStorage.getItem("arrayProdotti"));
+const productsArray = (JSON.parse(localStorage.getItem("arrayProdotti"))).filter((product) => product.quantita > 0);
 const productSelected = JSON.parse(localStorage.getItem("productSelected"));
 
 if (productSelected == null) {

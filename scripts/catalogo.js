@@ -3,7 +3,7 @@ const array = [
     idProdottoCatalogo: 1,
     colore: "bianco",
     taglia: "S",
-    prezzo: 10.00,
+    prezzo: 10.0,
     quantita: 534,
     infoSpedizione: "domani",
     categoria: "t-shirt",
@@ -14,7 +14,7 @@ const array = [
     idProdottoCatalogo: 10,
     colore: "bianco",
     taglia: "M",
-    prezzo: 10.00,
+    prezzo: 10.0,
     quantita: 534,
     infoSpedizione: "domani",
     categoria: "t-shirt",
@@ -25,7 +25,7 @@ const array = [
     idProdottoCatalogo: 2,
     colore: "blu",
     taglia: "M",
-    prezzo: 10.00,
+    prezzo: 10.0,
     quantita: 534,
     infoSpedizione: "domani",
     categoria: "canotta",
@@ -36,7 +36,7 @@ const array = [
     idProdottoCatalogo: 3,
     colore: "viola",
     taglia: "L",
-    prezzo: 10.00,
+    prezzo: 10.0,
     quantita: 534,
     infoSpedizione: "domani",
     categoria: "long-sleeved-t-shirt",
@@ -47,7 +47,7 @@ const array = [
     idProdottoCatalogo: 4,
     colore: "rosso",
     taglia: "XL",
-    prezzo: 10.00,
+    prezzo: 10.0,
     quantita: 534,
     infoSpedizione: "domani",
     categoria: "t-shirt",
@@ -58,7 +58,7 @@ const array = [
     idProdottoCatalogo: 5,
     colore: "verde",
     taglia: "M",
-    prezzo: 10.00,
+    prezzo: 10.0,
     quantita: 534,
     infoSpedizione: "domani",
     categoria: "canotta",
@@ -69,7 +69,7 @@ const array = [
     idProdottoCatalogo: 6,
     colore: "blu",
     taglia: "M",
-    prezzo: 10.00,
+    prezzo: 10.0,
     quantita: 10,
     infoSpedizione: "domani",
     categoria: "long-sleeved-t-shirt",
@@ -80,7 +80,7 @@ const array = [
     idProdottoCatalogo: 11,
     colore: "rosso",
     taglia: "M",
-    prezzo: 10.00,
+    prezzo: 10.0,
     quantita: 11,
     infoSpedizione: "domani",
     categoria: "long-sleeved-t-shirt",
@@ -91,7 +91,7 @@ const array = [
     idProdottoCatalogo: 12,
     colore: "rosso",
     taglia: "L",
-    prezzo: 10.00,
+    prezzo: 10.0,
     quantita: 11,
     infoSpedizione: "domani",
     categoria: "long-sleeved-t-shirt",
@@ -102,7 +102,7 @@ const array = [
     idProdottoCatalogo: 13,
     colore: "viola",
     taglia: "XL",
-    prezzo: 10.00,
+    prezzo: 10.0,
     quantita: 11,
     infoSpedizione: "domani",
     categoria: "long-sleeved-t-shirt",
@@ -110,10 +110,21 @@ const array = [
     modello: "donna",
   },
   {
+    idProdottoCatalogo: 14,
+    colore: "verde",
+    taglia: "S",
+    prezzo: 10.0,
+    quantita: 0,
+    infoSpedizione: "domani",
+    categoria: "long-sleeved-t-shirt",
+    img: "../img/donna/long-sleeved-t-shirt/immagine-long-sleeved-t-shirt-donna-verde.png",
+    modello: "donna",
+  },
+  {
     idProdottoCatalogo: 7,
     colore: "rosso",
     taglia: "S",
-    prezzo: 10.00,
+    prezzo: 10.0,
     quantita: 534,
     infoSpedizione: "domani",
     categoria: "t-shirt",
@@ -124,7 +135,7 @@ const array = [
     idProdottoCatalogo: 8,
     colore: "nero",
     taglia: "M",
-    prezzo: 10.00,
+    prezzo: 10.0,
     quantita: 534,
     infoSpedizione: "domani",
     categoria: "canotta",
@@ -135,7 +146,7 @@ const array = [
     idProdottoCatalogo: 9,
     colore: "rosa",
     taglia: "L",
-    prezzo: 10.00,
+    prezzo: 10.0,
     quantita: 534,
     infoSpedizione: "domani",
     categoria: "long-sleeved-t-shirt",
@@ -145,7 +156,7 @@ const array = [
 ];
 
 localStorage.setItem("arrayProdotti", JSON.stringify(array));
-const productsArray = JSON.parse(localStorage.getItem("arrayProdotti"));
+const productsArray = (JSON.parse(localStorage.getItem("arrayProdotti"))).filter((product) => product.quantita > 0);
 
 const productsContainer = document.querySelector(".products");
 const filterBtn = document.querySelector(".btn");
@@ -169,11 +180,9 @@ if (modelloSelezionato) {
 }
 
 function showAllProducts() {
-  productsArray
-    .filter((product) => product.quantita > 0)
-    .forEach((product) => {
-      renderProduct(product);
-    });
+  forEach((product) => {
+    renderProduct(product);
+  });
   productClick();
 }
 
@@ -238,7 +247,7 @@ function productClick() {
   products.forEach((product) => {
     product.addEventListener("click", () => {
       productsArray.forEach((product2) => {
-        if(product2.idProdottoCatalogo == product.id) {
+        if (product2.idProdottoCatalogo == product.id) {
           localStorage.setItem("productSelected", JSON.stringify(product2));
         }
       });
