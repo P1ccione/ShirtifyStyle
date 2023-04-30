@@ -1,4 +1,7 @@
-const productsArray = (JSON.parse(localStorage.getItem("arrayProdotti"))).filter((product) => product.quantita > 0);
+
+const productsArray = JSON.parse(localStorage.getItem("arrayProdotti")).filter(
+  (product) => product.quantita > 0
+);
 const productSelected = JSON.parse(localStorage.getItem("productSelected"));
 
 if (productSelected == null) {
@@ -149,3 +152,14 @@ quantityInput.addEventListener("change", () => {
   const quantity = parseInt(quantityInput.value);
   priceSpan.innerHTML = `${quantity * newProductSelected.prezzo} €`;
 });
+
+let cartArray;
+try {
+  cartArray = JSON.parse(localStorage.getItem("cartArray")) || [];
+} catch (e) {
+  console.error(
+    "Il valore della chiave 'cartArray' nel localStorage non è una stringa JSON valida."
+  );
+  cartArray = [];
+}
+

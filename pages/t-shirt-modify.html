@@ -57,56 +57,59 @@
           </div>
         </div>
         <div class="settings-section">
-          <div class="settings">
-            <span class="subtitle">Descrizione</span>
-            <hr />
-            <div class="section">
-              <span class="section-title">Prezzo</span>
-              <span class="value" id="price-span"></span>
+          
+            <div class="modify-form">
+              <div class="settings">
+                <span class="subtitle">Descrizione</span>
+                <hr />
+                <div class="section">
+                  <span class="section-title">Prezzo</span>
+                  <span class="value" id="price-span"></span>
+                </div>
+                <div class="section">
+                  <span class="section-title">Materiali</span>
+                  <span class="value">100% cotone</span>
+                </div>
+                <form id="product-form" method="POST" action="../php/submit-form.php">
+                  <div class="section">
+                    <span class="section-title">Colore</span>
+                    <select name="color-input" id="color" required>
+                    </select>
+                  </div>
+                  <div class="section">
+                    <span class="section-title">Taglia</span>
+                    <select name="size-input" id="size" required>
+                    </select>
+                  </div>
+                  <div class="section">
+                    <span class="section-title">Quantità</span>
+                    <input
+                      type="number"
+                      name="number-input"
+                      id="quantity"
+                      min="1"
+                      max="10"
+                      value="1"
+                      required
+                    />
+                  </div>
+                  <p>*quantità massima 10</p>
+                  <div class="section">
+                    <span for="file" class="section-title">Inserisci immagine</span>
+                    <input
+                      class="custom-file-input"
+                      type="file"
+                      name="file-input"
+                      id="file"
+                      accept="image/jpeg, image/png"
+                      required
+                    />
+                  </div>
+                  <p>*è consigliato inserire un'immagine quadrata</p>
+                  <hr />
+                  <button type="submit" id="submit">AGGIUNGI AL CARRELLO</button>
+                </form>
             </div>
-            <div class="section">
-              <span class="section-title">Materiali</span>
-              <span class="value">100% cotone</span>
-            </div>
-            <form action="" class="modify-form">
-              <div class="section">
-                <label for="" class="section-title">Colore</label>
-                <select name="color-input" id="color" required>
-                </select>
-              </div>
-              <div class="section">
-                <label for="size" class="section-title">Taglia</label>
-                <select name="size-input" id="size" required>
-                </select>
-              </div>
-              <div class="section">
-                <label for="quantity" class="section-title">Quantità</label>
-                <input
-                  type="number"
-                  name="number-input"
-                  id="quantity"
-                  min="1"
-                  max="10"
-                  value="1"
-                  required
-                />
-              </div>
-              <p>*quantità massima 10</p>
-              <div class="section">
-                <label for="file" class="section-title">Inserisci immagine</label>
-                <input
-                  class="custom-file-input"
-                  type="file"
-                  name="file-input"
-                  id="file"
-                  accept="image/jpeg, image/png"
-                  required
-                />
-              </div>
-              <p>*è consigliato inserire un'immagine quadrata</p>
-              <hr />
-              <input type="submit" value="AGGIUNGI AL CARRELLO" />
-            </form>
           </div>
         </div>
       </div>

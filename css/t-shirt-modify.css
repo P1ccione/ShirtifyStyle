@@ -49,6 +49,12 @@
   height: auto;
 }
 
+.modify-form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
 .container .t-shirt .t-shirt-img {
   background-image: url("../img/default-placeholder-image-removebg-preview.png");
   background-size: cover;
@@ -93,11 +99,6 @@ hr {
 
 .active {
   opacity: 1;
-}
-
-.modify-form {
-  display: flex;
-  flex-direction: column;
 }
 
 #quantity {
@@ -179,16 +180,17 @@ span.value {
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
 
-input[type="submit"] {
+#submit {
   height: 100px;
   background-color: rgb(0, 0, 0);
   color: #ffffff;
   font-size: 1.5rem;
   border-radius: 5px;
   cursor: pointer;
+  width: 100%;
 }
 
-input[type="submit"]:hover {
+#submit:hover {
   background-color: rgb(56, 24, 199);
 }
 @media (max-width: 1200px) {
@@ -224,6 +226,10 @@ input[type="submit"]:hover {
     height: 400px;
   }
 
+  .modify-form {
+    width: 100%;
+  }
+
   .container .title {
     font-size: 2rem;
   }
@@ -238,7 +244,7 @@ input[type="submit"]:hover {
     height: 90px;
   }
 
-  input[type="submit"] {
+  #submit {
     font-size: 1.2rem;
   }
 }
