@@ -96,13 +96,12 @@
                   <p>*quantità massima 10</p>
                   <div class="section">
                     <span for="file" class="section-title">Inserisci immagine</span>
+                    <input class="custom-file-input" type="file" name="file-input" id="file" accept="image/jpeg, image/png" required />
                     <input
-                      class="custom-file-input"
-                      type="file"
-                      name="file-input"
-                      id="file"
-                      accept="image/jpeg, image/png"
-                      required
+                      type="hidden"
+                      name="file-name"
+                      id="name"
+                      value=""
                     />
                   </div>
                   <p>*è consigliato inserire un'immagine quadrata</p>

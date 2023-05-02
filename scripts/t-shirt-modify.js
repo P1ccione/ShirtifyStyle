@@ -8,15 +8,48 @@ if (productSelected == null) {
   window.location.href = "./catalogo.html";
 }
 
+let cartArray = JSON.parse(localStorage.getItem('cartArray'));
+
+// Se l'array non esiste, crealo e salvalo nel Local Storage
+if (!cartArray) {
+  const cartArray2 = [];
+  localStorage.setItem('cartArray', JSON.stringify(cartArray2));
+  cartArray = JSON.parse(localStorage.getItem('cartArray'));
+}
+
 const productImage = document.querySelector(".t-shirt-img");
 const title = document.querySelector(".title");
 const priceSpan = document.querySelector("#price-span");
 const colorSelect = document.querySelector("#color");
 const sizeSelect = document.querySelector("#size");
 let newProductSelected = productSelected;
-const imageFile = document.querySelector("#file");
+const imageFile = document.querySelector("input.custom-file-input");
 const imageTshirt = document.querySelector("#personal-img");
 const quantityInput = document.querySelector("#quantity");
+
+// Imposta il valore dell'input con l'ID del prodotto
+const input = document.createElement('input');
+input.type = 'hidden';
+input.name = 'idProductSelected';
+input.value = newProductSelected.idProdottoCatalogo;
+
+// Aggiungi l'input al form
+const form = document.querySelector('form');
+form.appendChild(input);
+
+const input2 = document.createElement('input');
+input2.type = 'hidden';
+input2.name = 'cartArray';
+input2.value = JSON.stringify(cartArray);
+// Aggiungi l'input al form
+form.appendChild(input2);
+
+const input3 = document.createElement('input');
+input3.type = 'hidden';
+input3.name = 'prezzo';
+input3.value = newProductSelected.prezzo;
+// Aggiungi l'input al form
+form.appendChild(input3);
 
 title.innerHTML = `${productSelected.categoria} ${productSelected.modello}`;
 priceSpan.innerHTML = `${productSelected.prezzo} €`;
@@ -88,6 +121,7 @@ function showProductByColor() {
     ) {
       productImage.style.backgroundImage = `url(${product.img}`;
       newProductSelected = product;
+      localStorage.setItem("productSelected", JSON.stringify(newProductSelected));
       changeColorsSizes();
       changeOption();
     } else {
@@ -103,6 +137,7 @@ function showProductByColor() {
       ) {
         productImage.style.backgroundImage = `url(${product.img}`;
         newProductSelected = product;
+        localStorage.setItem("productSelected", JSON.stringify(newProductSelected));
         changeColorsSizes();
         changeOption();
       }
@@ -122,6 +157,7 @@ function showProductBySize() {
     ) {
       productImage.style.backgroundImage = `url(${product.img}`;
       newProductSelected = product;
+      localStorage.setItem("productSelected", JSON.stringify(newProductSelected));
       changeColorsSizes();
       changeOption();
     }
@@ -138,6 +174,7 @@ imageFile.addEventListener("change", () => {
     imageTshirt.src = reader.result;
   });
   reader.readAsDataURL(file);
+  document.querySelector("#name").value = `${imageFile.files[0].name}`;
 });
 
 colorSelect.addEventListener("change", () => {
@@ -153,13 +190,5 @@ quantityInput.addEventListener("change", () => {
   priceSpan.innerHTML = `${quantity * newProductSelected.prezzo} €`;
 });
 
-let cartArray;
-try {
-  cartArray = JSON.parse(localStorage.getItem("cartArray")) || [];
-} catch (e) {
-  console.error(
-    "Il valore della chiave 'cartArray' nel localStorage non è una stringa JSON valida."
-  );
-  cartArray = [];
-}
+
 
