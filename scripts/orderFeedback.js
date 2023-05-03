@@ -50,19 +50,19 @@ if (
                 <div class="description">
                     <div class="color">
                     <span class="title">Colore: </span>
-                    <span class="text">${prodotto.colore}</span>
+                    <span class="text1">${prodotto.colore}</span>
                     </div>
                     <div class="size">
                     <span class="title">Taglia: </span>
-                    <span class="text">${product.taglia}</span>
+                    <span class="text1">${product.taglia}</span>
                     </div>
                     <div class="materials">
                     <span class="title">Materiali: </span>
-                    <span class="text">${prodotto.materiale}</span>
+                    <span class="text1">${prodotto.materiale}</span>
                     </div>
                     <div class="print-type">
                     <span class="title">Tipo stampa: </span>
-                    <span class="text">${product.infoStampa}</span>
+                    <span class="text1">${product.infoStampa}</span>
                     </div>
                 </div>
                 </div>
