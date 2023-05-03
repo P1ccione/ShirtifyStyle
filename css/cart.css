@@ -14,6 +14,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .main .container {
@@ -43,10 +44,44 @@
   width: 150px;
 }
 
+.tanksDiv {
+  background-color: black;
+  color: white; 
+  width: 80%; 
+  text-align: center; 
+  height: 30vh; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  border-radius: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.tanksText {
+  font-size: 3rem;
+}
+
 .user-img {
   width: 100px;
   height: 100px;
   margin-top: 25px;
+}
+
+.numberRemove {
+  border: solid black 1px;
+  height: 50px;
+  margin: 25px;
+  width: 50px;
+  border-radius: 100px;
+  text-align: center;
+  margin-right: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
 }
 
 .main .container .item .item-column .column-title {
@@ -66,18 +101,29 @@
   margin-top: 35px;
 }
 
-.main .container .item .btn {
+.lastDiv {
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btnDiv {
+  display: flex;
+  grid-area: 2 / 6 / 3 / 7;
+}
+
+.btn {
   width: 140px;
   height: 60px;
   border-radius: 20px;
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   cursor: pointer;
-  font-size: 1.3rem;
+  font-size: auto;
   font-weight: bold;
   margin: 20px;
-  justify-self: center;
-  grid-area: 2 / 6 / 3 / 7;
 }
 
 .main .container .item .btn:hover {
@@ -85,12 +131,21 @@
 }
 
 @media (max-width: 950px) {
-  .main .container .item .btn {
+  .main .container .item .btnDiv {
     grid-area: initial;
+    justify-self: center;
+  }
+
+  .tanksText {
+    font-size: 2rem;
+  }
+
+  .lastDiv {
+    flex-direction: column;
   }
 
   .cart-title {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 
   .main .container .item {
@@ -115,4 +170,6 @@
   border-top: 3px solid black;
   width: 90vw;
   margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
