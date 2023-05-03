@@ -1,0 +1,68 @@
+* {
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    color: white;
+
+}
+
+ /*guide*/
+#title-list {
+    left: 50px;
+    position: relative;
+}
+
+h3 {
+    position: relative;
+    left: 50px;
+}
+
+#guide {
+    margin-top: 40px;
+    margin-left: 150px;
+}
+
+/*un-ordered list guide*/
+
+.list {
+    display: table-row;
+    left: 160px;
+    position: relative;
+    bottom: 260px;
+}
+
+.list > li {
+    margin-top: 25px;
+}
+
+#img-guide {
+    position: relative;
+    right: 50px;
+    bottom: 55px;
+}
+
+/*table*/
+
+caption {
+    width: 466px;
+    position: relative;
+    bottom: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    position: relative;
+    left: 100px;
+}
+
+table, td {
+    border: 2px solid white;
+    table-layout: fixed;
+    width: 100px;
+}
+
+td {
+    text-align: center;
+}
