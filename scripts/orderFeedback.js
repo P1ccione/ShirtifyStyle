@@ -1,7 +1,7 @@
-if (
-  document.referrer.indexOf("cart.html") > -1 &&
-  window.location.href.indexOf("orderFeedback.html") > -1
-) {
+// if (
+//   document.referrer.indexOf("cart.html") > -1 &&
+//   window.location.href.indexOf("orderFeedback.html") > -1
+// ) {
 
     (document.querySelector(".tanksDiv")).style.display = "flex";
 
@@ -72,6 +72,6 @@ if (
     productsContainer.insertAdjacentHTML("beforeend", itemHTML);
   });
   localStorage.removeItem('cartArray');
-} else {
-  window.location.href = "./cart.html";
-}
+// } else {
+//   window.location.href = "./cart.html";
+// }
