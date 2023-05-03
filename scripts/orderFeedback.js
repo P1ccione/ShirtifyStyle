@@ -3,7 +3,7 @@ if (
   window.location.href.indexOf("orderFeedback.html") > -1
 ) {
 
-    (document.querySelector(".tanksDiv")).style.display = "block";
+    (document.querySelector(".tanksDiv")).style.display = "flex";
 
   const cartArray = JSON.parse(localStorage.getItem("cartArray"));
   const productsArray = JSON.parse(localStorage.getItem("arrayProdotti"));
@@ -71,6 +71,7 @@ if (
             `;
     productsContainer.insertAdjacentHTML("beforeend", itemHTML);
   });
+  localStorage.removeItem('cartArray');
 } else {
   window.location.href = "./cart.html";
 }
