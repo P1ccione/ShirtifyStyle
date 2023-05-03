@@ -170,9 +170,10 @@ changeOption();
 imageFile.addEventListener("change", () => {
   const file = imageFile.files[0];
   const reader = new FileReader();
-  reader.addEventListener("load", () => {
-    imageTshirt.src = reader.result;
-  });
+  reader.onload = () => {
+    const image = reader.result;
+    imageTshirt.src = image;
+  };
   reader.readAsDataURL(file);
   document.querySelector("#name").value = `${imageFile.files[0].name}`;
 });
@@ -190,5 +191,6 @@ quantityInput.addEventListener("change", () => {
   priceSpan.innerHTML = `${quantity * newProductSelected.prezzo} €`;
 });
 
-
-
+//image
+//parseInt(quantityInput.value)
+//
