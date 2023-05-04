@@ -3,7 +3,7 @@ const productsArray = JSON.parse(localStorage.getItem("arrayProdotti"));
 let prodotto;
 let totale = 0;
 const productsContainer = document.querySelector(".container");
-if (!cartArray || cartArray.lenght <= 0) {
+if (!cartArray || cartArray.length <= 0) {
     productsContainer.innerHTML=`<span style="margin-top: 50px; font-size: 2rem;">IL TUO CARRELLO E' VUOTO</span>`;
   } else {
     productsContainer.innerHTML="";
@@ -71,7 +71,7 @@ if (!cartArray || cartArray.lenght <= 0) {
             if(removeNumber == product.quantita) {
                 const index = cartArray.findIndex(item => item.idRiga === product.idRiga);
                 if (index !== -1) {
-                cartArray.splice(index, 1);
+                    cartArray.splice(index, 1);
                 }
             }else{
                 product.quantita = parseInt(product.quantita) - removeNumber;
@@ -92,3 +92,5 @@ if (!cartArray || cartArray.lenght <= 0) {
     (document.querySelector(".main")).insertAdjacentHTML("beforeend", lastDiv);
   }
 
+
+  localStorage.removeItem('productSelected');

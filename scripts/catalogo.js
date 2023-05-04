@@ -269,3 +269,5 @@ function productClick() {
     });
   });
 }
+
+localStorage.removeItem('modello');
