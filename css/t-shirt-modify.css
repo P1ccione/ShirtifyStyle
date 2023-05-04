@@ -124,6 +124,15 @@ input::-webkit-inner-spin-button {
   text-align: center;
   cursor: pointer;
 }
+#color {
+  width: 71px;
+  border: solid black 1px;
+  border-radius: 5px;
+  appearance: none;
+  text-align: center;
+  cursor: pointer;
+}
+
 .container .subtitle {
   font-size: 2rem;
 }
