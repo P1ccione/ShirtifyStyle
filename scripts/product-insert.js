@@ -4,10 +4,9 @@ if (!productsArray) {
   localStorage.setItem("arrayProdotti", JSON.stringify(productsArray2));
   productsArray = JSON.parse(localStorage.getItem("arrayProdotti"));
 }
-
 const imageFile = document.querySelector("#file");
 const imageProduct = document.querySelector("#immagine-prodotto");
-const form = document.querySelector("form");
+const form = document.querySelector("#form");
 
 imageFile.addEventListener("change", () => {
   const file = imageFile.files[0];
@@ -37,17 +36,23 @@ form.addEventListener("submit", function (event) {
     img: imageProduct.src,
     modello: document.querySelector("#model").value,
   };
-  productsArray.forEach((element) => {
-    if (
-      product.colore == element.colore &&
-      product.taglia == element.taglia &&
-      product.modello == element.modello &&
-      product.categoria == element.categoria
-    ) {
-      alert("ESISTE GIA UN PRODOTTO CON QUESTE CARATTERISTICHE")
-    } else {
-      productsArray.push(product);
-      localStorage.setItem("arrayProdotti", JSON.stringify(productsArray));
-    }
-  });
+  console.log("esiste", product);
+  if (productsArray.length <= 0) {
+    productsArray.push(product);
+    localStorage.setItem("arrayProdotti", JSON.stringify(productsArray));
+  } else {
+    productsArray.forEach((element) => {
+      if (
+        product.colore == element.colore &&
+        product.taglia == element.taglia &&
+        product.modello == element.modello &&
+        product.categoria == element.categoria
+      ) {
+        alert("ESISTE GIA UN PRODOTTO CON QUESTE CARATTERISTICHE");
+      } else {
+        productsArray.push(product);
+        localStorage.setItem("arrayProdotti", JSON.stringify(productsArray));
+      }
+    });
+  }
 });

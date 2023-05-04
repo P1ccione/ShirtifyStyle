@@ -1,4 +1,6 @@
-const productsArray = (JSON.parse(localStorage.getItem("arrayProdotti"))).filter((product) => product.quantita > 0);
+const productsArray = JSON.parse(localStorage.getItem("arrayProdotti")).filter(
+  (product) => product.quantita > 0
+);
 
 const productsContainer = document.querySelector(".products");
 const filterBtn = document.querySelector(".btn");
@@ -18,22 +20,38 @@ if (modelloSelezionato) {
   }
   showProductsByModel(modelloSelezionato);
 } else {
+  if (productsArray.length <= 0) {
+    const text = document.createElement("span");
+    text.classList.add("product-text");
+    text.innerHTML = "Non ci sono prodotti con queste caratteristiche";
+    productsContainer.classList.add("active");
+    productsContainer.appendChild(text);
+  } else {
   showAllProducts();
+  }
 }
 
 function showAllProducts() {
-  productsArray.forEach((product) => {
-    renderProduct(product);
-  });
-  productClick();
+    productsArray.forEach((product) => {
+      renderProduct(product);
+    });
+    productClick();
 }
 
 function showProductsByModel(model) {
-  productsArray
-    .filter((product) => product.modello === model && product.quantita > 0)
-    .forEach((product) => renderProduct(product));
-
-  productClick();
+  const newArray = productsArray.filter(
+    (product) => product.modello === model && product.quantita > 0
+  );
+  if (newArray.length <= 0) {
+    const text = document.createElement("span");
+    text.classList.add("product-text");
+    text.innerHTML = "Non ci sono prodotti con queste caratteristiche";
+    productsContainer.classList.add("active");
+    productsContainer.appendChild(text);
+  } else {
+    newArray.forEach((product) => renderProduct(product));
+    productClick();
+  }
 }
 
 function renderProduct(product) {
@@ -47,7 +65,7 @@ function renderProduct(product) {
     <img src="${product.img}" alt="" class="product-image" />
     <span class="text">taglia: ${product.taglia}</span>
     <span class="text">colore: ${product.colore}</span>
-    <span class="text">prezzo: ${product.prezzo}</span>
+    <span class="text">prezzo: € ${product.prezzo}</span>
   `;
   productsContainer.appendChild(productElement);
 }
@@ -98,4 +116,4 @@ function productClick() {
   });
 }
 
-localStorage.removeItem('modello');
+localStorage.removeItem("modello");
