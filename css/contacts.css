@@ -72,6 +72,9 @@ p {
   left: 50%;
   top: 50%;
   transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 form {
@@ -122,6 +125,40 @@ input {
   opacity: 0.5;
 }
 
+.thanksContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tanksText {
+  margin-top: 150px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  text-align: center;
+  background-color: white;
+  height: 100px;
+  color: black;
+}
+
+.tanksSocialContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 65px;
+}
+
+.tanksSocial-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.8rem;
+  margin-top: 2em;
+}
+
 @media (max-width: 1000px) {
   .mainContainer {
     position: relative;
@@ -156,6 +193,13 @@ input {
     min-height: 15%;
     max-width: 15%;
   }
+
+  .tanksText {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 70%;
+  }
 }
 
 @media (max-width: 580px) {
@@ -177,6 +221,13 @@ input {
     min-height: 20%;
     max-width: 20%;
   }
+
+  .tanksText {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 400px) {
@@ -192,6 +243,10 @@ input {
   .formContainer {
     width: 250px;
   }
+
+  .tanksText {
+    width: 9em;
+  }
 }
 
 @media (min-width: 1001px) {
@@ -206,6 +261,21 @@ input {
   .socialImages {
     min-height: 10%;
     max-width: 10%;
+  }
+  .tanksText {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 800px) {
+  .tanksText {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 }
 
