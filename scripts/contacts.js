@@ -1,11 +1,10 @@
 const form = document.querySelector('form');
 form.addEventListener('submit', (event) => {
   event.preventDefault(); // prevent form submission
-  toggleThanks();
 });
 
 function toggleThanks() {
-    const thanksDiv = document.querySelector('.thanksContainer');
+    const thanksDiv = document.querySelector('.thanks');
     if (thanksDiv.style.display === 'none') {
       thanksDiv.style.display = 'block';
     } else {

@@ -59,6 +59,15 @@
   .header .btn {
     top:70%;
   }
+
+  .header .title {
+    font-size: 3rem;
+    top: 20%;
+  }
+
+  .header .subtitle{
+    width: 80%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -79,9 +88,6 @@
 @media (max-width: 400px) {
   .header .title {
     font-size: 2rem;
-  }
-  .header .subtitle {
-    width: 100%;
   }
 }
 
@@ -159,121 +165,4 @@
       width: 300px;
       height: 100%;
     }
-
   }
-/* FOOTER */
-
-.footer {
-  height: auto;
-  font-family: "arial";
-  background-color: rgb(0, 0, 0);
-}
-
-.footer .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-content: center;
-  padding-top: 100px;
-}
-
-.footer .container .footer-section {
-  border: solid rgb(255, 255, 255) 2px;
-  width: 280px;
-  height: 310px;
-  background-color: rgb(91, 91, 91);
-  color: rgb(255, 255, 255);
-  justify-self: center;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.footer .container .footer-section .content {
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.text {
-  display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.content {
-  display: flex;
-  align-content: center;
-  align-items: flex-start;
-  margin-top: 10px;
-}
-
-.footer .container .footer-section img {
-  width: 30px;
-  margin-top: 10px;
-}
-
-.footer .container .footer-section .title {
-  font-size: 1.8rem;
-  border: solid rgb(255, 255, 255) 2px;
-  width: 100%;
-}
-
-.footer .container .footer-section .content .text {
-  font-size: 1rem;
-  margin: 10px;
-}
-
-.copyright {
-  display: flex;
-  flex-direction: column;
-  margin-top: 100px;
-  justify-content: center;
-  align-items: center;
-}
-
-
-.copyright .text {
-  color: rgb(255, 255, 255);
-  font-size: 1.2rem;
-  margin: 10px;
-  text-align: center;
-}
-
-.text-order {
-  display: flex;
-  align-items: flex-end;
-}
-
-
-/*img-svg footer*/
-
-
-.margin {
-  margin-right: 10px;
-}
-
-.img {
-  margin-bottom: 10px;
-}
-
-.img, svg {
-  height: 25px;
-  width: 30px;
-}
-
-
-/*media query footer*/
-@media (max-width: 1250px) {
-  .footer .container {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-  }
-}
-
-@media (max-width: 650px) {
-  .footer .container {
-    grid-template-columns: 1fr;
-  }
-}
