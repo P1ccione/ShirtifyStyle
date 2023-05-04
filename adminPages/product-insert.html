@@ -33,10 +33,10 @@
         </div>
         <ul class="mainMenu">
           <li><a href="../">HOME</a></li>
-          <li><a href="./catalogo.html">CATALOGO</a></li>
-          <li><a href="./contacts.html">CONTATTI</a></li>
+          <li><a href="../pages/catalogo.html">CATALOGO</a></li>
+          <li><a href="../pages/contacts.html">CONTATTI</a></li>
           <li>
-            <a href="./cart.html"
+            <a href="../pages/cart.html"
               ><img src="../svg/cart.svg" alt="" class="nav-img"
             /></a>
           </li>
@@ -58,57 +58,68 @@
         <div class="form">
           <form action="" method="post">
             <div class="section">
-              <label class="label" for="modello">Seleziona modello</label>
-              <select name="model-input" id="model" required>
+              <label class="label" for="modelloProdotto">Seleziona modello</label>
+              <select name="modelloProdotto" id="model" required>
                 <option value="uomo">Uomo</option>
                 <option value="donna">Donna</option>
                 <option value="bambino">Bambino</option>
               </select>
             </div>
             <div class="section">
-              <label class="label" for="categoria">Seleziona categoria</label>
-              <select name="category-input" id="category" required>
+              <label class="label" for="categoriaProdotto">Seleziona categoria</label>
+              <select name="categoriaProdotto" id="category" required>
                 <option value="t-shirt">T-Shirt</option>
                 <option value="polo">Polo</option>
                 <option value="canotta">Canotta</option>
               </select>
             </div>
             <div class="section">
-              <label class="label" for="descrizione prodotto"
-                >Inserire descrizione del prodotto</label
+              <label class="label" for="materialeProdotto"
+                >Inserire materiale</label
               >
               <input
                 type="text"
-                name="descrizione prodotto"
-                placeholder="descrizione del prodotto"
+                name="materialeProdotto"
                 required
+                id="materialeProdotto"
               />
             </div>
             <div class="section">
-              <label class="label" for="prezzo prodotto">Inserire prezzo</label>
+              <label class="label" for="spedizioneProdotto"
+                >Inserire tempi e modi di spedizione</label
+              >
+              <input
+                type="text"
+                name="spedizioneProdotto"
+                required
+                id="spedizioneProdotto"
+              />
+            </div>
+            <div class="section">
+              <label class="label" for="prezzoProdotto">Inserire prezzo</label>
               <input
                 type="number"
-                name="prezzo prodotto"
-                placeholder="prezzo del prodotto"
-                min="0"
+                name="prezzoProdotto"
+                min="1"
                 required
+                id="prezzoProdotto"
               />
             </div>
             <div class="section">
-              <label class="label" for="quantità prodotto"
+              <label class="label" for="quantitaProdotto"
                 >Inserire quantità</label
               >
               <input
                 type="number"
-                name="quantità prodotto"
-                placeholder="quantità del prodotto"
+                name="quantitaProdotto"
                 min="0"
                 required
+                id="quantitaProdotto"
               />
             </div>
             <div class="section">
-              <label class="label" for="taglia">Seleziona taglia</label>
-              <select name="size-input" id="size" required>
+              <label class="label" for="tagliaProdotto">Seleziona taglia</label>
+              <select name="tagliaProdotto" id="size" required>
                 <option value="S">S</option>
                 <option value="M">M</option>
                 <option value="L">L</option>
@@ -116,8 +127,8 @@
               </select>
             </div>
             <div class="section">
-              <label class="label" for="colore">Seleziona colore</label>
-              <select name="color-input" id="color" required>
+              <label class="label" for="coloreProdotto">Seleziona colore</label>
+              <select name="coloreProdotto" id="color" required>
                 <option value="rosso">Rosso</option>
                 <option value="verde">Verde</option>
                 <option value="nero">Nero</option>
@@ -131,7 +142,7 @@
               <input
                 class="custom-file-input"
                 type="file"
-                name="file-input"
+                name="immagineProdotto"
                 id="file"
                 accept="image/jpeg, image/png"
                 required
