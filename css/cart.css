@@ -107,6 +107,7 @@ margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 100px;
 }
 
 .btnDiv {
@@ -142,6 +143,11 @@ margin: 0;
 
   .lastDiv {
     flex-direction: column;
+  }
+
+  #totPrice {
+    margin: 25px;
+    text-align: center;
   }
 
   .cart-title {
