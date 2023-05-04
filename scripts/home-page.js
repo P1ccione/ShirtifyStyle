@@ -5,7 +5,5 @@ sections.forEach(section => {
     localStorage.setItem('modello', section.id);
 
     window.location.href='./pages/catalogo.html';
-  } )
-
-  
-})
+  });
+});

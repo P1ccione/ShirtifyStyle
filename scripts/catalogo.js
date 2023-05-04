@@ -1,6 +1,15 @@
-const productsArray = JSON.parse(localStorage.getItem("arrayProdotti")).filter(
-  (product) => product.quantita > 0
-);
+let productsArray = JSON.parse(localStorage.getItem("arrayProdotti"));
+if (!productsArray) {
+  const productsArray2 = [];
+  localStorage.setItem("arrayProdotti", JSON.stringify(productsArray2));
+  productsArray = JSON.parse(localStorage.getItem("arrayProdotti"));
+} else {
+  productsArray = JSON.parse(localStorage.getItem("arrayProdotti")).filter(
+    (product) => product.quantita > 0
+  );
+}
+
+
 
 const productsContainer = document.querySelector(".products");
 const filterBtn = document.querySelector(".btn");
@@ -11,7 +20,8 @@ const modelloSelezionato = localStorage.getItem("modello");
 
 const selectModello = document.getElementById("modello");
 
-if (modelloSelezionato) {
+if (modelloSelezionato != null) {
+  console.log("modello diverso da null");
   for (let i = 0; i < selectModello.options.length; i++) {
     if (selectModello.options[i].value === modelloSelezionato) {
       selectModello.selectedIndex = i;
@@ -20,6 +30,7 @@ if (modelloSelezionato) {
   }
   showProductsByModel(modelloSelezionato);
 } else {
+  console.log("modello uguale da null");
   if (productsArray.length <= 0) {
     const text = document.createElement("span");
     text.classList.add("product-text");

@@ -25,6 +25,7 @@ let newProductSelected = productSelected;
 const imageFile = document.querySelector("input.custom-file-input");
 const imageTshirt = document.querySelector("#personal-img");
 const quantityInput = document.querySelector("#quantity");
+quantityInput.max = newProductSelected.quantita;
 let image;
 
 // Aggiungi l'input al form
@@ -100,6 +101,7 @@ function showProductByColor() {
     ) {
       productImage.style.backgroundImage = `url(${product.img}`;
       newProductSelected = product;
+      quantityInput.max = newProductSelected.quantita;
       localStorage.setItem(
         "productSelected",
         JSON.stringify(newProductSelected)
@@ -119,6 +121,7 @@ function showProductByColor() {
       ) {
         productImage.style.backgroundImage = `url(${product.img}`;
         newProductSelected = product;
+        quantityInput.max = newProductSelected.quantita;
         localStorage.setItem(
           "productSelected",
           JSON.stringify(newProductSelected)
@@ -142,6 +145,7 @@ function showProductBySize() {
     ) {
       productImage.style.backgroundImage = `url(${product.img}`;
       newProductSelected = product;
+      quantityInput.max = newProductSelected.quantita;
       localStorage.setItem(
         "productSelected",
         JSON.stringify(newProductSelected)
@@ -193,15 +197,6 @@ form.addEventListener("submit", function (event) {
     infoStampa: "Offset",
   };
   let control = false;
-  productsArray.forEach((product) => {
-    if (
-      product.idProdottoCatalogo == newProductSelected.idProdottoCatalogo
-    ) {
-      product.quantita = parseInt(product.quantita) - parseInt(quantityInput.value);
-      console.log(product.quantita);
-    }
-  });
-  localStorage.setItem("arrayProdotti", JSON.stringify(productsArray));
   cartArray.forEach(element => {
 
     if(element.idProdotto == cartProduct.idProdotto && element.taglia == cartProduct.taglia && element.userImg == cartProduct.userImg && element.infoSpedizione == cartProduct.infoSpedizione){
