@@ -59,6 +59,15 @@
   .header .btn {
     top:70%;
   }
+
+  .header .title {
+    font-size: 3rem;
+    top: 20%;
+  }
+
+  .header .subtitle{
+    width: 80%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -79,9 +88,6 @@
 @media (max-width: 400px) {
   .header .title {
     font-size: 2rem;
-  }
-  .header .subtitle {
-    width: 100%;
   }
 }
 
