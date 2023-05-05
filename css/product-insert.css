@@ -53,6 +53,23 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+.alert {
+  width: 50vw;
+  height: 10vh;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  position: fixed;
+  border-radius: 0px 0px 20px 20px;
+  font-size: 1.5rem;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .label {
   width: 50%;
   height: 3em;
@@ -142,9 +159,14 @@ input {
     margin-top: 20px;
   }
 
-  @media screen and (max-width:500px) {
+  @media screen and (max-width:800px) {
     h1 {
       font-size: 1.6rem;
+  }
+
+  .alert {
+    font-size: 1rem;
+    width: 80%;
   }
   
   .container {

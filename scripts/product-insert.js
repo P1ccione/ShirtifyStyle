@@ -1,4 +1,5 @@
 let productsArray = JSON.parse(localStorage.getItem("arrayProdotti"));
+let control = false;
 if (!productsArray) {
   const productsArray2 = [];
   localStorage.setItem("arrayProdotti", JSON.stringify(productsArray2));
@@ -36,11 +37,11 @@ form.addEventListener("submit", function (event) {
     img: imageProduct.src,
     modello: document.querySelector("#model").value,
   };
-  console.log("esiste", product);
   if (productsArray.length <= 0) {
     productsArray.push(product);
     localStorage.setItem("arrayProdotti", JSON.stringify(productsArray));
   } else {
+    const alert = document.querySelector(".alert");
     productsArray.forEach((element) => {
       if (
         product.colore == element.colore &&
@@ -48,11 +49,42 @@ form.addEventListener("submit", function (event) {
         product.modello == element.modello &&
         product.categoria == element.categoria
       ) {
-        alert("ESISTE GIA UN PRODOTTO CON QUESTE CARATTERISTICHE");
+        alert.style.backgroundColor = "red";
+        alert.innerHTML = "ESISTE GIA UN PRODOTTO CON QUESTE CARATTERISTICHE";
+        alertFade(alert);
+        control = true;
       } else {
-        productsArray.push(product);
-        localStorage.setItem("arrayProdotti", JSON.stringify(productsArray));
+        alert.style.backgroundColor = "rgb(5, 250, 50)";
+        alert.innerHTML = "IL PRODOTTO E' STATO INSERITO";
+        alertFade(alert);
       }
     });
   }
+  if (control == false) {
+    productsArray.push(product);
+    localStorage.setItem("arrayProdotti", JSON.stringify(productsArray));
+  }
 });
+
+function alertFade(alert) {
+  let opacity = 0;
+
+  // Fade in
+  const fadeTimer = setInterval(() => {
+    opacity += 0.1;
+    alert.style.opacity = opacity.toString();
+    if (opacity >= 1) {
+      clearInterval(fadeTimer);
+      // Wait 4 seconds, then fade out
+      setTimeout(() => {
+        const fadeOutTimer = setInterval(() => {
+          opacity -= 0.1;
+          alert.style.opacity = opacity.toString();
+          if (opacity <= 0) {
+            clearInterval(fadeOutTimer);
+          }
+        }, 20);
+      }, 4000);
+    }
+  }, 20);
+}

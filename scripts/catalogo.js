@@ -21,7 +21,6 @@ const modelloSelezionato = localStorage.getItem("modello");
 const selectModello = document.getElementById("modello");
 
 if (modelloSelezionato != null) {
-  console.log("modello diverso da null");
   for (let i = 0; i < selectModello.options.length; i++) {
     if (selectModello.options[i].value === modelloSelezionato) {
       selectModello.selectedIndex = i;
@@ -30,7 +29,6 @@ if (modelloSelezionato != null) {
   }
   showProductsByModel(modelloSelezionato);
 } else {
-  console.log("modello uguale da null");
   if (productsArray.length <= 0) {
     const text = document.createElement("span");
     text.classList.add("product-text");
