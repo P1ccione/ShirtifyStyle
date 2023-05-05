@@ -11,7 +11,6 @@
   justify-content: center;
   align-items: center;
   height: auto;
-  margin-bottom: 50px;
   margin-top: 50px;
 }
 
@@ -21,8 +20,8 @@
   justify-content: center;
   align-items: center;
   margin-right: 50px;
-  background: #d6d1d1;
   border-radius: 50px;
+  position: relative;
 }
 
 .container .title {
@@ -65,12 +64,19 @@
   align-items: center;
   text-align: center;
   width: 500px;
-  height: 500px;
+  height: auto;
 }
 
 #personal-img {
-  width: 150px;
-  height: 150px;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 45%;
+}
+
+img.productImg {
+  width: 100%;
+  height: 100%;
 }
 
 hr {
@@ -210,12 +216,10 @@ span.value {
   .container .t-shirt {
     margin: 0;
     width: 500px;
-    height: 600px;
   }
 
   .container .t-shirt .t-shirt-img {
     width: 500px;
-    height: 600px;
   }
 }
 
@@ -223,7 +227,6 @@ span.value {
   .container .t-shirt {
     margin: 0;
     width: 300px;
-    height: 400px;
   }
 
   .modify-form {
@@ -236,7 +239,6 @@ span.value {
 
   .container .t-shirt .t-shirt-img {
     width: 300px;
-    height: 400px;
   }
 
   #personal-img {

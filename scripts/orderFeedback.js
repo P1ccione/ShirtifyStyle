@@ -1,12 +1,12 @@
-// if (
-//   document.referrer.indexOf("cart.html") > -1 &&
-//   window.location.href.indexOf("orderFeedback.html") > -1
-// ) {
+if (
+  document.referrer.indexOf("cart.html") > -1 &&
+  window.location.href.indexOf("orderFeedback.html") > -1
+) {
 
     (document.querySelector(".tanksDiv")).style.display = "flex";
 
   const cartArray = JSON.parse(localStorage.getItem("cartArray"));
-  const productsArray = JSON.parse(localStorage.getItem("arrayProdotti"));
+  let productsArray = JSON.parse(localStorage.getItem("arrayProdotti"));
   let prodotto;
   const productsContainer = document.querySelector(".container");
 
@@ -14,8 +14,10 @@
     productsArray.forEach((product2) => {
       if (product.idProdotto === product2.idProdottoCatalogo) {
         prodotto = product2;
+        product2.quantita = product2.quantita - product.quantita;
       }
     });
+    localStorage.setItem("arrayProdotti", JSON.stringify(productsArray));
     const itemHTML = `
             <div class="item">
                 <div class="item-column">
@@ -72,6 +74,6 @@
     productsContainer.insertAdjacentHTML("beforeend", itemHTML);
   });
   localStorage.removeItem('cartArray');
-// } else {
-//   window.location.href = "./cart.html";
-// }
+} else {
+  window.location.href = "./cart.html";
+}

@@ -3,20 +3,19 @@ let productsArray = JSON.parse(localStorage.getItem("arrayProdotti")).filter(
 );
 const productSelected = JSON.parse(localStorage.getItem("productSelected"));
 
-if (productSelected == null) {
+if (productSelected == null || productsArray.length <= 0 || productsArray == null) {
   window.location.href = "./catalogo.html";
 }
 
 let cartArray = JSON.parse(localStorage.getItem("cartArray"));
 
-// Se l'array non esiste, crealo e salvalo nel Local Storage
 if (!cartArray) {
   const cartArray2 = [];
   localStorage.setItem("cartArray", JSON.stringify(cartArray2));
   cartArray = JSON.parse(localStorage.getItem("cartArray"));
 }
 
-const productImage = document.querySelector(".t-shirt-img");
+const productImage = document.querySelector(".productImg");
 const title = document.querySelector(".title");
 const priceSpan = document.querySelector("#price-span");
 const colorSelect = document.querySelector("#color");
@@ -28,12 +27,11 @@ const quantityInput = document.querySelector("#quantity");
 quantityInput.max = newProductSelected.quantita;
 let image;
 
-// Aggiungi l'input al form
 const form = document.querySelector("form");
 
 title.innerHTML = `${productSelected.categoria} ${productSelected.modello}`;
 priceSpan.innerHTML = `${productSelected.prezzo} €`;
-productImage.style.backgroundImage = `url(${productSelected.img}`;
+productImage.src = `${productSelected.img}`;
 
 function changeOption() {
   for (let i = 0; i < colorSelect.options.length; i++) {
@@ -150,8 +148,6 @@ function showProductBySize() {
         "productSelected",
         JSON.stringify(newProductSelected)
       );
-      changeColorsSizes();
-      changeOption();
     }
   });
 }
