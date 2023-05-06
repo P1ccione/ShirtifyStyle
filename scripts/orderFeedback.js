@@ -1,24 +1,17 @@
-if (
-  document.referrer.indexOf("cart.html") > -1 &&
-  window.location.href.indexOf("orderFeedback.html") > -1
-) {
+const cartArray = JSON.parse(localStorage.getItem("cartArray"));
+let productsArray = JSON.parse(localStorage.getItem("arrayProdotti"));
+let prodotto;
+const productsContainer = document.querySelector(".container");
 
-    (document.querySelector(".tanksDiv")).style.display = "flex";
-
-  const cartArray = JSON.parse(localStorage.getItem("cartArray"));
-  let productsArray = JSON.parse(localStorage.getItem("arrayProdotti"));
-  let prodotto;
-  const productsContainer = document.querySelector(".container");
-
-  cartArray.forEach((product) => {
-    productsArray.forEach((product2) => {
-      if (product.idProdotto === product2.idProdottoCatalogo) {
-        prodotto = product2;
-        product2.quantita = product2.quantita - product.quantita;
-      }
-    });
-    localStorage.setItem("arrayProdotti", JSON.stringify(productsArray));
-    const itemHTML = `
+cartArray.forEach((product) => {
+  productsArray.forEach((product2) => {
+    if (product.idProdotto === product2.idProdottoCatalogo) {
+      prodotto = product2;
+      product2.quantita = product2.quantita - product.quantita;
+    }
+  });
+  localStorage.setItem("arrayProdotti", JSON.stringify(productsArray));
+  const itemHTML = `
             <div class="item">
                 <div class="item-column">
                 <span class="column-title">Prodotto</span>
@@ -71,9 +64,6 @@ if (
             </div>
             <hr class="item-hr" />
             `;
-    productsContainer.insertAdjacentHTML("beforeend", itemHTML);
-  });
-  localStorage.removeItem('cartArray');
-} else {
-  window.location.href = "./cart.html";
-}
+  productsContainer.insertAdjacentHTML("beforeend", itemHTML);
+});
+localStorage.removeItem("cartArray");

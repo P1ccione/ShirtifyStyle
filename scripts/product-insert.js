@@ -37,11 +37,13 @@ form.addEventListener("submit", function (event) {
     img: imageProduct.src,
     modello: document.querySelector("#model").value,
   };
+  const alert = document.querySelector(".alert");
   if (productsArray.length <= 0) {
     productsArray.push(product);
     localStorage.setItem("arrayProdotti", JSON.stringify(productsArray));
+    alertFade(alert);
+    control = true;
   } else {
-    const alert = document.querySelector(".alert");
     productsArray.forEach((element) => {
       if (
         product.colore == element.colore &&
@@ -57,12 +59,14 @@ form.addEventListener("submit", function (event) {
         alert.style.backgroundColor = "rgb(5, 250, 50)";
         alert.innerHTML = "IL PRODOTTO E' STATO INSERITO";
         alertFade(alert);
+        control = false;
       }
     });
   }
   if (control == false) {
     productsArray.push(product);
     localStorage.setItem("arrayProdotti", JSON.stringify(productsArray));
+    // control = 
   }
 });
 
