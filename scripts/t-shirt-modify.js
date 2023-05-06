@@ -1,11 +1,12 @@
-let productsArray = JSON.parse(localStorage.getItem("arrayProdotti")).filter(
-  (product) => product.quantita > 0
-);
+let productsArray = JSON.parse(localStorage.getItem("arrayProdotti"))
 const productSelected = JSON.parse(localStorage.getItem("productSelected"));
 
 if (productSelected == null || productsArray.length <= 0 || productsArray == null) {
   window.location.href = "./catalogo.html";
 }
+productsArray.filter(
+  (product) => product.quantita > 0
+);
 
 let cartArray = JSON.parse(localStorage.getItem("cartArray"));
 
@@ -31,7 +32,7 @@ const form = document.querySelector("form");
 
 title.innerHTML = `${productSelected.categoria} ${productSelected.modello}`;
 priceSpan.innerHTML = `${productSelected.prezzo} €`;
-productImage.src = `${productSelected.img}`;
+(document.querySelector(".productImg")).src = `${newProductSelected.img}`;
 
 function changeOption() {
   for (let i = 0; i < colorSelect.options.length; i++) {
@@ -87,8 +88,8 @@ function changeColorsSizes() {
 }
 
 function showProductByColor() {
-  const color = colorSelect.options[colorSelect.selectedIndex].value;
-  const size = sizeSelect.options[sizeSelect.selectedIndex].value;
+  const color = (document.querySelector("#color")).options[colorSelect.selectedIndex].value;
+  const size = (document.querySelector("#size")).options[sizeSelect.selectedIndex].value;
   let control = false;
   productsArray.forEach((product) => {
     if (
@@ -97,8 +98,8 @@ function showProductByColor() {
       product.taglia == size &&
       product.colore == color
     ) {
-      productImage.style.backgroundImage = `url(${product.img}`;
       newProductSelected = product;
+      (document.querySelector(".productImg")).src = `${newProductSelected.img}`;
       quantityInput.max = newProductSelected.quantita;
       localStorage.setItem(
         "productSelected",
@@ -106,6 +107,7 @@ function showProductByColor() {
       );
       changeColorsSizes();
       changeOption();
+      control = false;
     } else {
       control = true;
     }
@@ -117,8 +119,8 @@ function showProductByColor() {
         product.categoria == newProductSelected.categoria &&
         product.colore == color
       ) {
-        productImage.style.backgroundImage = `url(${product.img}`;
         newProductSelected = product;
+        (document.querySelector(".productImg")).src = `${newProductSelected.img}`;
         quantityInput.max = newProductSelected.quantita;
         localStorage.setItem(
           "productSelected",
@@ -141,8 +143,8 @@ function showProductBySize() {
       product.taglia == size &&
       product.colore == color
     ) {
-      productImage.style.backgroundImage = `url(${product.img}`;
       newProductSelected = product;
+      (document.querySelector(".productImg")).src = `${newProductSelected.img}`;
       quantityInput.max = newProductSelected.quantita;
       localStorage.setItem(
         "productSelected",
@@ -196,9 +198,7 @@ form.addEventListener("submit", function (event) {
   cartArray.forEach(element => {
 
     if(element.idProdotto == cartProduct.idProdotto && element.taglia == cartProduct.taglia && element.userImg == cartProduct.userImg && element.infoSpedizione == cartProduct.infoSpedizione){
-      console.log(element.quantita);
       element.quantita = parseInt(element.quantita) + parseInt(cartProduct.quantita);
-      console.log(element.quantita);
       control = true;
     }
     
