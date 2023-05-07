@@ -51,28 +51,22 @@
         <div class="swiper carousel">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="./img2/image1.jpeg" alt="" />
-                    <span class="title">Crea la tua maglietta personalizzata.</span>
-                    <span class="subtitle">Scegli il colore, inserisci l'immagine e tutto è fatto!</span>
+                    <img class="img-swiper" src="./img2/image2.jpeg" alt="" />
+                    <span id="title1" class="title">Crea la tua maglietta personalizzata.</span>
+                    <span id="subtitle1" class="subtitle">Scorri per il colore</span>
                     <button class="btn" onclick="window.location.href='./pages/catalogo.html'">
                         Compra ora
                     </button>
                 </div>
                 <div class="swiper-slide">
-                    <img src="./img2/image2.jpeg" alt="" />
-                    <span class="title">Crea la tua maglietta personalizzata.</span>
-                    <span class="subtitle">Scegli il colore, inserisci l'immagine e tutto è fatto!</span>
-                    <button class="btn" onclick="window.location.href='./pages/catalogo.html'">
-                        Compra ora
-                    </button>
+                    <img class="img-swiper" src="./img2/image1.jpeg" alt="" />
+                    <span id="title2" class="title">Scegli il colore</span>
+                    <span id="subtitle2" class="subtitle">Abbina il colore perfetto per la tua maglietta</span>
                 </div>
                 <div class="swiper-slide">
-                    <img src="./img2/image3.jpeg" alt="" />
-                    <span class="title">Crea la tua maglietta personalizzata.</span>
-                    <span class="subtitle">Scegli il colore, inserisci l'immagine e tutto è fatto!</span>
-                    <button class="btn" onclick="window.location.href='./pages/catalogo.html'">
-                        Compra ora
-                    </button>
+                    <img class="img-swiper" src="./img2/image3.jpeg" alt="" />
+                    <span id="title3" class="title">Inserisci l'immagine</span>
+                    <span id="subtitle3" class="subtitle">Sei pronto per ordinare!</span>
                 </div>
             </div>
             <button type="button" class="swiper-button-next"></button>
@@ -168,53 +162,24 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <!-- Initialize Swiper -->
     <script>
-        var swiper = new Swiper(".carousel", {
+
+        // Inizializza lo swiper utilizzando la libreria Swiper.js
+        var swiper = new Swiper('.carousel', {
+            slidesPerView: 1,
+            loop: true,
             navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
             },
             pagination: {
-                el: ".swiper-pagination",
+                el: '.swiper-pagination',
+            },
+            autoplay: {
+                delay: 3500, // Imposta l'intervallo di tempo per lo scorrimento delle immagini
+                disableOnInteraction: false // Abilita la riproduzione automatica dopo l'interazione dell'utente
             },
         });
 
-        // Imposta l'intervallo di tempo tra ogni animazione in millisecondi
-        var interval = 3000;
-
-        // Definisci la funzione che esegue l'animazione
-        function animaCarousel() {
-            // Ottieni l'elemento attualmente attivo nel carosello
-            var elementoAttivo = document.querySelector(".swiper-slide-active");
-
-            // Ottieni l'elemento successivo nel carosello
-            var elementoSuccessivo = elementoAttivo.nextElementSibling;
-
-            // Se non ci sono elementi successivi, torna al primo elemento
-            if (!elementoSuccessivo) {
-                elementoSuccessivo = document.querySelector(".swiper-slide:first-child");
-            }
-
-            // Ottieni la larghezza del carosello
-            var larghezzaCarousel = document.querySelector(".carousel").offsetWidth;
-
-            // Calcola la posizione del prossimo elemento
-            var posizioneSuccessiva = elementoSuccessivo.offsetLeft;
-
-            // Calcola la distanza da spostare il carosello
-            var distanza = -(posizioneSuccessiva);
-
-            // Esegui l'animazione utilizzando la funzione CSS translateX()
-            document.querySelector(".swiper-wrapper").style.transform = "translateX(" + distanza + "px)";
-
-            // Aggiungi la classe .swiper-slide-active al prossimo elemento
-            elementoSuccessivo.classList.add("swiper-slide-active");
-
-            // Rimuovi la classe .swiper-slide-active dall'elemento attivo
-            elementoAttivo.classList.remove("swiper-slide-active");
-        }
-
-        // Avvia l'animazione automatica
-        var intervallo = setInterval(animaCarousel, interval);
     </script>
 </body>
 
