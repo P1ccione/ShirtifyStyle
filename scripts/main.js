@@ -26,3 +26,8 @@ const logo = document.querySelector("nav .logo");
 logo.addEventListener("click", () => {
   window.location.href = "../"
 })
+
+document.querySelector('.arrow').addEventListener('click', function() {
+  // scrolliamo la pagina all'inizio
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
