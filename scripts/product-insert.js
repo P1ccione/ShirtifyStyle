@@ -1,7 +1,68 @@
 let productsArray = JSON.parse(localStorage.getItem("arrayProdotti"));
 let control = false;
-if (!productsArray) {
-  const productsArray2 = [];
+if (!productsArray || productsArray.length == 0) {
+  const productsArray2 = [
+    {
+      idProdottoCatalogo: 1,
+      colore: "bianco",
+      taglia: "S",
+      prezzo: "12",
+      quantita: "100",
+      materiale: "cotone",
+      infoSpedizione: "5-10 giorni lavorativi",
+      categoria: "t-shirt",
+      img: "../img/t-shirt-uomo-bianca.png",
+      modello: "uomo",
+    },
+    {
+      idProdottoCatalogo: 2,
+      colore: "bianco",
+      taglia: "M",
+      prezzo: "10",
+      quantita: "50",
+      materiale: "cotone",
+      infoSpedizione: "5-10 giorni lavorativi",
+      categoria: "canotta",
+      img: "../img/canotta-uomo-bianca.png",
+      modello: "uomo",
+    },
+    {
+      idProdottoCatalogo: 3,
+      colore: "bianco",
+      taglia: "L",
+      prezzo: "12",
+      quantita: "80",
+      materiale: "cotone",
+      infoSpedizione: "5-10 giorni lavorativi",
+      categoria: "t-shirt",
+      img: "../img/t-shirt-donna-bianca.png",
+      modello: "donna",
+    },
+    {
+      idProdottoCatalogo: 4,
+      colore: "bianco",
+      taglia: "S",
+      prezzo: "12",
+      quantita: "80",
+      materiale: "cotone",
+      infoSpedizione: "5-10 giorni lavorativi",
+      categoria: "t-shirt",
+      img: "../img/t-shirt-bambino-bianca.png",
+      modello: "bambino",
+    },
+    {
+      idProdottoCatalogo: 5,
+      colore: "bianco",
+      taglia: "XL",
+      prezzo: "12",
+      quantita: "80",
+      materiale: "cotone",
+      infoSpedizione: "5-10 giorni lavorativi",
+      categoria: "canotta",
+      img: "../img/canotta-donna-bianca.png",
+      modello: "donna",
+    },
+  ];
   localStorage.setItem("arrayProdotti", JSON.stringify(productsArray2));
   productsArray = JSON.parse(localStorage.getItem("arrayProdotti"));
 }
@@ -38,11 +99,11 @@ form.addEventListener("submit", function (event) {
     modello: document.querySelector("#model").value,
   };
   const alert = document.querySelector(".alert");
-  if (productsArray.length <= 0) {
+  control = false;
+  if (productsArray.length == 0) {
     productsArray.push(product);
     localStorage.setItem("arrayProdotti", JSON.stringify(productsArray));
     alertFade(alert);
-    control = true;
   } else {
     productsArray.forEach((element) => {
       if (
@@ -55,18 +116,15 @@ form.addEventListener("submit", function (event) {
         alert.innerHTML = "ESISTE GIA UN PRODOTTO CON QUESTE CARATTERISTICHE";
         alertFade(alert);
         control = true;
-      } else {
-        alert.style.backgroundColor = "rgb(5, 250, 50)";
-        alert.innerHTML = "IL PRODOTTO E' STATO INSERITO";
-        alertFade(alert);
-        control = false;
       }
     });
-  }
-  if (control == false) {
-    productsArray.push(product);
-    localStorage.setItem("arrayProdotti", JSON.stringify(productsArray));
-    // control = 
+    if (control == false) {
+      alert.style.backgroundColor = "rgb(5, 250, 50)";
+      alert.innerHTML = "IL PRODOTTO E' STATO INSERITO";
+      alertFade(alert);
+      productsArray.push(product);
+      localStorage.setItem("arrayProdotti", JSON.stringify(productsArray));
+    }
   }
 });
 

@@ -28,7 +28,7 @@
 .main .container .item {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   width: 80vw;
 }
 
@@ -112,7 +112,6 @@ margin: 0;
 
 .btnDiv {
   display: flex;
-  grid-area: 2 / 6 / 3 / 7;
 }
 
 .btn {

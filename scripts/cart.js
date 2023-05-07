@@ -13,10 +13,7 @@ if (!cartArray || cartArray.length <= 0) {
         prodotto = product2;
       }
     });
-    totale =
-      totale +
-      (parseInt(product.quantita) * parseInt(prodotto.prezzo) +
-        ((parseInt(product.quantita) * parseInt(prodotto.prezzo)) / 100) * 10);
+    totale = totale + (parseInt(product.quantita) * parseInt(prodotto.prezzo));
     const itemHTML = `   
             <div class="item">
             <div class="item-column">
@@ -38,14 +35,6 @@ if (!cartArray || cartArray.length <= 0) {
             <span class="text quantity">${parseInt(product.quantita)}</span>
             </div>
             <div class="item-column">
-            <span class="column-title">Subtotale</span>
-            <span class="text subtotal"
-                >€ ${ parseInt(product.quantita) * parseInt(prodotto.prezzo) +
-                ((parseInt(product.quantita) * parseInt(prodotto.prezzo)) / 100) * 10
-                }</span
-            >
-            </div>
-            <div class="item-column">
             <span class="column-title">Descrizione</span>
             <div class="description">
                 <div class="color">
@@ -64,6 +53,7 @@ if (!cartArray || cartArray.length <= 0) {
                 <span class="title">Tipo stampa: </span>
                 <span class="text1">${product.infoStampa}</span>
                 </div>
+            </div>
             </div>
             </div>
             <form id="productRemove${product.idRiga}" class="btnDiv">

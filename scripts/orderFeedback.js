@@ -32,15 +32,6 @@ cartArray.forEach((product) => {
                 <span class="text quantity">${parseInt(product.quantita)}</span>
                 </div>
                 <div class="item-column">
-                <span class="column-title">Subtotale</span>
-                <span class="text subtotal">€ ${
-                  parseInt(product.quantita) * parseInt(prodotto.prezzo) +
-                  ((parseInt(product.quantita) * parseInt(prodotto.prezzo)) /
-                    100) *
-                    10
-                }</span>
-                </div>
-                <div class="item-column">
                 <span class="column-title">Descrizione</span>
                 <div class="description">
                     <div class="color">
