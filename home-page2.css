@@ -1,6 +1,4 @@
-*,
-*::before,
-*::after {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -38,6 +36,7 @@ body {
     font-weight: bold;
     width: max-content;
     font-weight: 700;
+    width: 80%;
 }
 
 .header .subtitle {
@@ -79,14 +78,6 @@ body {
 
 .header .btn:hover {
     background-color: rgb(56, 24, 199);
-}
-
-.header #title1 {
-    width: 80%;
-}
-
-.header #title3 {
-    width: 80%;
 }
 
 
