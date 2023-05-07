@@ -154,8 +154,8 @@ nav .logo {
   border-radius: 25px;
   width: 280px;
   height: 310px;
-  background-color: rgb(91, 91, 91);
-  color: rgb(255, 255, 255);
+  background-color: black;
+  color: white;
   justify-self: center;
   text-align: center;
   display: flex;
@@ -247,8 +247,16 @@ nav .logo {
 
 .img,
 svg {
-  height: 25px;
+  height: 28px;
   width: 30px;
+}
+
+.img {
+  background-color: white;
+}
+
+svg {
+  fill: white;
 }
 
 /*media query footer*/
