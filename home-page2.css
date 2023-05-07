@@ -10,11 +10,9 @@
     }
 
     body {
-        display: grid;
         place-items: center;
         background-color: rgb(215, 240, 249);
     }
-
 
     /* HEADER */
 
@@ -245,6 +243,3 @@
             width: 300px;
         }
     }
-
-
-    
