@@ -37,6 +37,7 @@ body {
     font-size: 4rem;
     font-weight: bold;
     width: max-content;
+    font-weight: 700;
 }
 
 .header .subtitle {
@@ -46,7 +47,9 @@ body {
     left: 50%;
     transform: translateX(-50%);
     font-size: 2rem;
+    font-weight: 700;
     width: max-content;
+    width: 80%;
 }
 
 .header .btn {
@@ -54,7 +57,7 @@ body {
     height: 50px;
     width: 200px;
     position: absolute;
-    top: 80%;
+    top: 50%;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 20px;
@@ -251,11 +254,6 @@ body {
     }
 }
 
-@media screen and (max-width: 440px) {
-    .header #subtitle2 {
-        font-size: 1rem;
-    }
-}
 @media screen and (max-width: 400px) {
     .header #title2 {
         font-size: 2rem;
