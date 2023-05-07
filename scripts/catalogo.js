@@ -1,6 +1,67 @@
 let productsArray = JSON.parse(localStorage.getItem("arrayProdotti"));
-if (!productsArray) {
-  const productsArray2 = [];
+if (!productsArray || productsArray.length == 0) {
+  const productsArray2 = [
+    {
+      idProdottoCatalogo: 1,
+      colore: "bianco",
+      taglia: "S",
+      prezzo: "12",
+      quantita: "100",
+      materiale: "cotone",
+      infoSpedizione: "5-10 giorni lavorativi",
+      categoria: "t-shirt",
+      img: "../img/t-shirt-uomo-bianca.png",
+      modello: "uomo",
+    },
+    {
+      idProdottoCatalogo: 2,
+      colore: "bianco",
+      taglia: "M",
+      prezzo: "10",
+      quantita: "50",
+      materiale: "cotone",
+      infoSpedizione: "5-10 giorni lavorativi",
+      categoria: "canotta",
+      img: "../img/canotta-uomo-bianca.png",
+      modello: "uomo",
+    },
+    {
+      idProdottoCatalogo: 3,
+      colore: "bianco",
+      taglia: "L",
+      prezzo: "12",
+      quantita: "80",
+      materiale: "cotone",
+      infoSpedizione: "5-10 giorni lavorativi",
+      categoria: "t-shirt",
+      img: "../img/t-shirt-donna-bianca.png",
+      modello: "donna",
+    },
+    {
+      idProdottoCatalogo: 4,
+      colore: "bianco",
+      taglia: "S",
+      prezzo: "12",
+      quantita: "80",
+      materiale: "cotone",
+      infoSpedizione: "5-10 giorni lavorativi",
+      categoria: "t-shirt",
+      img: "../img/t-shirt-bambino-bianca.png",
+      modello: "bambino",
+    },
+    {
+      idProdottoCatalogo: 5,
+      colore: "bianco",
+      taglia: "XL",
+      prezzo: "12",
+      quantita: "80",
+      materiale: "cotone",
+      infoSpedizione: "5-10 giorni lavorativi",
+      categoria: "canotta",
+      img: "../img/canotta-donna-bianca.png",
+      modello: "donna",
+    },
+  ];
   localStorage.setItem("arrayProdotti", JSON.stringify(productsArray2));
   productsArray = JSON.parse(localStorage.getItem("arrayProdotti"));
 } else {
@@ -8,8 +69,6 @@ if (!productsArray) {
     (product) => product.quantita > 0
   );
 }
-
-
 
 const productsContainer = document.querySelector(".products");
 const filterBtn = document.querySelector(".btn");
@@ -36,15 +95,15 @@ if (modelloSelezionato != null) {
     productsContainer.classList.add("active");
     productsContainer.appendChild(text);
   } else {
-  showAllProducts();
+    showAllProducts();
   }
 }
 
 function showAllProducts() {
-    productsArray.forEach((product) => {
-      renderProduct(product);
-    });
-    productClick();
+  productsArray.forEach((product) => {
+    renderProduct(product);
+  });
+  productClick();
 }
 
 function showProductsByModel(model) {
