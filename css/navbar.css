@@ -241,3 +241,25 @@ svg {
     grid-template-columns: 1fr;
   }
 }
+
+.arrow {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(76, 35, 163);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  position: absolute;
+  top: 90vh;
+  right: 20px;
+  z-index: 999;
+  position: fixed;
+  opacity: .5;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  background-color: blue;
+  opacity: 1;
+}
