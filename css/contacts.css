@@ -62,6 +62,11 @@ p {
   cursor: pointer;
 }
 
+.social-footer {
+  font-size: 200%;
+  cursor: pointer;
+}
+
 .formContainer {
   position: absolute;
   background-color: whitesmoke;
