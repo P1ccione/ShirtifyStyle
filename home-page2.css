@@ -16,7 +16,6 @@ body {
 
 .header {
     font-family: "arial";
-    position: relative;
     text-align: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -258,11 +257,7 @@ body {
 /* Style swiper */
 .swiper {
 
-    height: 100vh;
-}
-
-.swiper-slide {
-    background-color: #000;
+    height: 100%;
 }
 
 .swiper-slide img {
@@ -319,8 +314,6 @@ body {
     align-items: center;
     text-align: center;
     margin: 50px;
-    top: 250px;
-    position: relative;
 }
 
 .main .main-section {
@@ -389,3 +382,9 @@ body {
         width: 300px;
     }
 }
+
+.social-footer {
+    font-size: 200%;
+    cursor: pointer;
+  }
+  
