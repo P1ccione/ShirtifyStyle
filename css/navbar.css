@@ -279,3 +279,8 @@ svg {
   background-color: blue;
   opacity: 1;
 }
+
+.social-footer {
+  font-size: 200%;
+  cursor: pointer;
+}
