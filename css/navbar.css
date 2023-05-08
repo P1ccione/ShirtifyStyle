@@ -7,7 +7,9 @@ nav {
   align-items: center;
   justify-content: space-between;
   height: 15vh;
+  width: 100%;
 }
+
 nav .mainMenu {
   display: flex;
   list-style: none;
@@ -15,6 +17,7 @@ nav .mainMenu {
   margin-right: 20px;
   font-family: "arial";
 }
+
 nav .mainMenu li a {
   display: inline-block;
   padding: 15px;
@@ -24,33 +27,41 @@ nav .mainMenu li a {
   font-size: 18px;
   transition: 0.2s ease;
 }
+
 nav .mainMenu li a:hover {
   background-color: rgb(56, 24, 199);
 }
+
 nav .mainMenu img:hover {
   cursor: pointer;
 }
+
 nav .openMenu {
   font-size: 2rem;
   margin: 20px;
   display: none;
   cursor: pointer;
 }
+
 nav .mainMenu .closeMenu,
 .icons i {
   font-size: 2rem;
   display: none;
   cursor: pointer;
 }
+
 .fa-facebook:hover {
   color: rgb(0, 110, 255);
 }
+
 .fa-twitter:hover {
   color: rgb(86, 154, 243);
 }
+
 .fa-instagram:hover {
   color: rgb(255, 0, 191);
 }
+
 nav .logo {
   margin: 6px;
   font-family: "Noto Japanese", serif;
@@ -60,15 +71,18 @@ nav .logo {
   align-items: center;
   font-size: 1.8rem;
 }
+
 .fa-shirt {
   margin-right: 10px;
   margin-left: 10px;
   font-size: 2rem;
 }
+
 .logo img {
   width: 50px;
   margin: 10px;
 }
+
 .nav-img {
   width: 30px;
   padding: 0 auto;
@@ -78,6 +92,7 @@ nav .logo {
   nav .logo {
     font-size: 1.3rem;
   }
+
   nav .mainMenu {
     height: 100vh;
     margin-right: 0;
@@ -93,15 +108,18 @@ nav .logo {
     transition: top 1s ease 0s;
     display: none;
   }
+
   nav .mainMenu .closeMenu {
     display: block;
     position: absolute;
     top: 20px;
     right: 20px;
   }
+
   nav .openMenu {
     display: block;
   }
+
   nav .mainMenu li a:hover {
     background: none;
     background-color: rgb(56, 24, 199);
@@ -163,14 +181,6 @@ nav .logo {
   margin-top: 50px;
 }
 
-.footer .container .footer-section .content .text {
-  font-size: 1rem;
-  margin: 10px;
-  display: flex;
-  flex-direction: row;
-  gap: 0.8em;
-}
-
 .footer .container .footer-section img {
   width: 30px;
   margin-top: 10px;
@@ -178,7 +188,16 @@ nav .logo {
 
 .footer .container .footer-section .title {
   font-size: 1.8rem;
+  margin: 10px;
   width: 100%;
+}
+
+.footer .container .footer-section .content .text {
+  font-size: 1rem;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 0.8em;
 }
 
 .copyright {
@@ -256,6 +275,8 @@ svg {
   }
 }
 
+/* pulsante arrow*/
+
 .arrow {
   width: 50px;
   height: 50px;
@@ -276,9 +297,4 @@ svg {
 .arrow:hover {
   background-color: blue;
   opacity: 1;
-}
-
-.social-footer {
-  font-size: 200%;
-  cursor: pointer;
 }
