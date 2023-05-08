@@ -190,7 +190,7 @@ form.addEventListener("submit", function (event) {
     idProdotto: newProductSelected.idProdottoCatalogo,
     quantita: parseInt(quantityInput.value),
     taglia: sizeSelect.options[sizeSelect.selectedIndex].value,
-    userImg: image,
+    userImg:  resizeImage(imageTshirt, 300, 300),
     infoSpedizione: newProductSelected.infoSpedizione,
     infoStampa: "Offset",
   };
@@ -210,3 +210,12 @@ form.addEventListener("submit", function (event) {
   window.location.href = "./cart.html";
 
 });
+
+function resizeImage(image, width, height) {
+  const canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = height;
+  const context = canvas.getContext('2d');
+  context.drawImage(image, 0, 0, width, height);
+  return canvas.toDataURL();
+}
