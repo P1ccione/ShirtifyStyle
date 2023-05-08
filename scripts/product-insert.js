@@ -126,6 +126,7 @@ form.addEventListener("submit", function (event) {
       localStorage.setItem("arrayProdotti", JSON.stringify(productsArray));
     }
   }
+  window.location.href = "./product-insert.html";
 });
 
 function alertFade(alert) {
@@ -150,3 +151,82 @@ function alertFade(alert) {
     }
   }, 20);
 }
+
+productsArray.forEach((product) => {
+  renderProduct(product);
+});
+
+function renderProduct(product) {
+  const productList = document.querySelector(".productList");
+  const itemHtml = `
+        <span class="idProduct">id Prodotto: ${product.idProdottoCatalogo}</span>
+              <div class="item">
+                <div class="item-column">
+                  <span class="column-title">Prodotto</span>
+                  <img
+                    src="${product.img}"
+                    alt=""
+                    class="product-img"
+                  />
+                </div>
+                <div class="item-column">
+                  <span class="column-title">Prezzo</span>
+                  <span class="text price">${product.prezzo}</span>
+                </div>
+                <div class="item-column">
+                  <span class="column-title">Quantità</span>
+                  <span class="text quantity">${product.quantita}</span>
+                </div>
+                <div class="item-column">
+                <span class="column-title">Descrizione</span>
+                <div class="description">
+                  <div class="color">
+                    <span class="title">Colore: </span>
+                    <span class="text1">${product.colore}</span>
+                  </div>
+                  <div class="size">
+                    <span class="title">Taglia: </span>
+                    <span class="text1">${product.taglia}</span>
+                  </div>
+                  <div class="materials">
+                    <span class="title">Materiali: </span>
+                    <span class="text1">${product.materiale}</span>
+                  </div>
+                </div>
+              </div>
+              </div>
+        `;
+
+  productList.insertAdjacentHTML("beforeend", itemHtml);
+}
+
+const filterBtn = document.querySelector(".btn");
+
+let filteredProducts = [];
+
+filterBtn.addEventListener("click", () => {
+  const filterModel = document.querySelector("#modello");
+  const filterColor = document.querySelector("#colore");
+  const filterSize = document.querySelector("#taglia");
+  const optionModel = filterModel.options[filterModel.selectedIndex].value;
+  const optionColor = filterColor.options[filterColor.selectedIndex].value;
+  const optionSize = filterSize.options[filterSize.selectedIndex].value;
+
+  filteredProducts = productsArray.filter(
+    (product) =>
+      (optionModel === "all" || product.modello === optionModel) &&
+      (optionColor === "all" || product.colore === optionColor) &&
+      (optionSize === "all" || product.taglia === optionSize)
+  );
+
+  const productList = document.querySelector(".productList");
+  productList.innerHTML = "";
+
+  if (filteredProducts.length != 0) {
+    filteredProducts.forEach((product) => {
+      renderProduct(product);
+    });
+  } else {
+    productList.innerHTML = "NON CI SONO PRODOTTI CON QUESTE CARATTERISTICHE";
+  }
+});

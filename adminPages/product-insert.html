@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>ADMIN</title>
     <link rel="stylesheet" href="../css/navbar.css" />
     <link rel="stylesheet" href="../css/product-insert.css" />
     <link
@@ -51,10 +51,14 @@
         </ul>
       </nav>
     </header>
-
-    <div class="alert alertActive">
-      CIAO
+    <div class="arrow">
+      <i
+        class="fa-solid fa-arrow-up"
+        style="color: #ffffff; font-size: 2rem"
+      ></i>
     </div>
+
+    <div class="alert alertActive"></div>
 
     <div class="main">
       <h1>Inserimento del prodotto</h1>
@@ -62,7 +66,9 @@
         <div class="form">
           <form id="form">
             <div class="section">
-              <label class="label" for="modelloProdotto">Seleziona modello</label>
+              <label class="label" for="modelloProdotto"
+                >Seleziona modello</label
+              >
               <select name="modelloProdotto" id="model" required>
                 <option value="uomo">Uomo</option>
                 <option value="donna">Donna</option>
@@ -70,10 +76,14 @@
               </select>
             </div>
             <div class="section">
-              <label class="label" for="categoriaProdotto">Seleziona categoria</label>
+              <label class="label" for="categoriaProdotto"
+                >Seleziona categoria</label
+              >
               <select name="categoriaProdotto" id="category" required>
                 <option value="t-shirt">T-Shirt</option>
-                <option value="long-sleeved-t-shirt">Long-sleeved T-Shirt</option>
+                <option value="long-sleeved-t-shirt">
+                  Long-sleeved T-Shirt
+                </option>
                 <option value="canotta">Canotta</option>
               </select>
             </div>
@@ -158,12 +168,51 @@
                 id="immagine-prodotto"
               />
             </div>
-            <input type="submit" value="INVIA">
+            <input type="submit" value="INVIA" />
           </form>
         </div>
       </div>
+      <div class="filters">
+        <div class="subdiv">
+          <div class="filter">
+            <span class="filter-title">Modello</span>
+            <select name="" id="modello" class="select">
+              <option value="all">All</option>
+              <option value="uomo">Uomo</option>
+              <option value="donna">Donna</option>
+              <option value="bambino">Bambino</option>
+            </select>
+          </div>
+          <div class="filter">
+            <span class="filter-title">Colore</span>
+            <select name="" id="colore" class="select">
+              <option value="all">All</option>
+              <option value="rosso">Rosso</option>
+              <option value="blu">Blu</option>
+              <option value="verde">Verde</option>
+              <option value="viola">Viola</option>
+              <option value="rosa">Rosa</option>
+              <option value="nero">Nero</option>
+              <option value="bianco">Bianco</option>
+            </select>
+          </div>
+          <div class="filter">
+            <span class="filter-title">Taglia</span>
+            <select name="" id="taglia" class="select">
+              <option value="all">All</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn">FILTRA</button>
+      </div>
+      <div class="productList">
+        
+      </div>
     </div>
-
     <script src="../scripts/main.js"></script>
     <script src="../scripts/product-insert.js"></script>
   </body>
